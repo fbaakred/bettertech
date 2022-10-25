@@ -1,16 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-// import './index.css'
+import App from './App'
+import { BrowserRouter } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>Hello World!</h1>
-        <p><i>This will be the future website of BetterTech</i></p>
-      </div>
-    )
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>, 
+  document.getElementById('root')
+);
