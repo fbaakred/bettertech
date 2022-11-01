@@ -8,15 +8,15 @@ const Header = () => {
   return (
     <div className="header">
       <Link to="/" className="pageName">
-        <Logo width="200" height="100" />
+        <Logo width="200" height="116" />
       </Link>
       <Link to="/" className="logoWithText">
         <Messages3 />
-        <h3>Contact</h3>
+        <div>Contact</div>
       </Link>
       <Link to="/" className="logoWithText">
         <ProfileAdd />
-        <h3>Create profile</h3>
+        <div>Create profile</div>
       </Link>
     </div>
   );
