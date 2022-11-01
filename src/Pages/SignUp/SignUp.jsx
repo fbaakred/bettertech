@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { auth, db } from "../../firebase";
+import { auth } from "../../firebase";
 import "./signup.css";
 import { Button, Form } from "react-bootstrap";
+import { getDatabase, ref, set } from "firebase/database";
 
 /**
  * Component for adding new user to database
@@ -28,13 +29,12 @@ const SignUp = () => {
                 .createUserWithEmailAndPassword(email, password);
             const uid = signUp.user.uid;
 
-            await db
-                .ref("Users/" + uid)
-                .set({
-                    Email: email,
-                    displayName: displayName,
-                    height: 0,
-                });
+            const db = getDatabase();
+            await set(ref(db, 'Users/' + uid), {
+                email: email,
+                displayName: displayName,
+                height: 0,
+            });
 
             window.location = "/profile";
         } catch (errorMessage) {
@@ -89,7 +89,7 @@ const SignUp = () => {
                 </Form.Group>
                 <Button type={"submit"}>Create user</Button>
                 <div>
-                    Already a user? <Link to={"signin"}>Sign in here!</Link>
+                    Already a user? <Link to={"/signin"}>Sign in here!</Link>
                 </div>
             </Form>
         </div>

@@ -63,7 +63,7 @@ const SignIn = () => {
                 <Button type={"submit"}>Sign in</Button>
                 <div>
                     Not a user yet?{" "}
-                    <Link to={"signup"}>Sign up here!</Link>
+                    <Link to={"/signup"}>Sign up here!</Link>
                 </div>
             </Form>
         </div>
