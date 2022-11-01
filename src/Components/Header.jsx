@@ -11,7 +11,7 @@ const Header = () => {
         <Messages3 />
         <h3>Contact</h3>
       </Link>
-      <Link to="/" className="logoWithText">
+      <Link to="/signup" className="logoWithText">
         <ProfileAdd />
         <h3>Create profile</h3>
       </Link>
