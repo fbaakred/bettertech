@@ -1,0 +1,152 @@
+a:visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:focus {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:active {
+    text-decoration: none;
+    color: #000000;
+}
+
+input {
+    text-align: center;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #0FA958;
+    font-weight: 550;
+    font-style: italic;
+}
+
+.wrapper {
+    margin: auto;
+    width: 100%;
+}
+
+.static {
+    width: 100%;
+    z-index: 2;
+    position: fixed;
+}
+
+.content {
+    float: left;
+    position: relative;
+    top:10em;
+}
+
+.hpFullDiv {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+    padding-top: 5em;
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.hpHalfDivWhiteLeft {
+    display: block;
+    float: left;
+    width: 50%;
+    background-color: #FFFFFF;
+    height: 425px;
+    border-top-left-radius: 20px;
+    overflow: auto;
+}
+
+.hpHalfDivWhiteRight {
+    display: block;
+    float: left;
+    width: 50%;
+    background-color: #FFFFFF;
+    height: 425px;
+    border-top-right-radius: 20px;
+    overflow: auto;
+}
+
+.hpHalfDivGreenLeft {
+    display: block;
+    float: left;
+    width: 50%;
+    background-color: #0FA958;
+    height: 385px;
+    padding-top: 2.5em;
+    border-top-left-radius: 20px;
+    overflow: auto;
+}
+
+.hpHalfDivGreenRight {
+    display: block;
+    float: left;
+    width: 50%;
+    background-color: #0FA958;
+    height: 385px;
+    padding-top: 2.5em;
+    border-top-right-radius: 20px;
+    overflow: auto;
+}
+
+.hpTextH {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.hpTextP {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.hpImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    height: auto;
+    max-height: 425px;
+}
+
+.topDiv {
+    position: relative;
+    z-index: 1;
+}
+
+.topDiv .bgImg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../Images/backgroundImage.jpg");
+    opacity: 0.3;
+    /* Full height */
+    height: 120vh;
+    width: 98.5vw;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
