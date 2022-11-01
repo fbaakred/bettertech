@@ -4,23 +4,21 @@
   display: flex;
   flex: 4em 1em 1em;
   align-items: center;
-  background-color: #001647;
-  color: #fff;
-  padding: 1em;
+  color: black;
 }
 
 .pageName {
   font-family: 'hobo-std';
   font-size: 50px;
-  color: #FEFEFE;
+  color: #0FA958;
   text-decoration: none;
   margin-right: auto;
 }
 
 .logoWithText {
   display: flex;
-  color: #FEFEFE;
+  color: #0FA958;
   align-items: center;
   text-decoration: none;
-  margin-left: 1em;
+  margin-right: 1em;
 }
