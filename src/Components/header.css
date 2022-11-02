@@ -11,9 +11,28 @@
 .pageName {
   font-family: 'hobo-std';
   margin-right: auto;
+  align-items: center;
+  background-color: #E6E6E6;
+  color: #000000;
+  padding: 1em;
+  padding-left: 2em;
 }
 
-.logoWithText {
+.headerText {
+  align-items: center;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 33px;
+  color: #000000;
+  margin: auto;
+}
+
+.aboveHeader {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #FFFFFF;
   display: flex;
   color: #0FA958;
   align-items: flex-end;
@@ -21,4 +40,56 @@
   margin-right: 1em;
   margin-bottom: 0.2em;
   font-size: x-large;
+  flex: 4em 1em 1em;
+  align-items: center;
+  padding: 0.5em;
+  padding-left: 1em;
+}
+
+.aboveHeaderLeft {
+  float: left;
+  margin-right: auto;
+}
+
+.aboveHeaderRight {
+  float: right;
+  margin-left: auto;
+}
+
+.aboveHeaderItems {
+  float: left;
+  align-items: center;
+  white-space: nowrap;
+  padding-right: 2em;
+}
+
+.avoidCollapse {
+  clear: left;
+}
+
+.aboveHeaderSingleText {
+  display: inline-block;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  color: #0FA958;
+  text-decoration: none;
+}
+
+.otherHeaderLogos {
+  height: auto;
+  width: auto;
+  max-width: 50px;
+}
+
+.mainLogo {
+  height: auto;
+  width: auto;
+  max-width: 200px;
+}
+
+.inputToCompare {
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  line-height: 25px;
 }
