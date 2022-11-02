@@ -1,0 +1,21 @@
+.footer {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #E6E6E6;
+    color: #000000;
+    padding: 1em;
+    padding-left: 2em;
+}
+
+.footerText {
+    align-items: center;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 33px;
+    color: #000000;
+    margin: auto;
+}
