@@ -3,16 +3,23 @@ import Homepage from "./Pages/Homepage";
 import Header from "./Components/Header";
 import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
+import Footer from "./Components/Footer";
+import "./Components/websiteTheme.css";
 
 const App = () => {
   return (
-    <div>
-      <Header />
+    <div className="wrapper">
+      <div className="static">
+        <Header />
+      </div>
+      <div className="content">
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
+      <Footer />
+      </div>
     </div>
   );
 }
