@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div>
       <div className="footer">
-        <div className="footerText"><Link to="/">Copyright - 2022 BetterTech Inc. All rights reserved.</Link></div>
+        <div className="footerText">Copyright - 2022 BetterTech Inc. All rights reserved.</div>
         <div className="footerText"><Link to="/">Privacy Policy</Link></div>
         <div className="footerText"><Link to="/">Terms of Use</Link></div>
         <div className="footerText"><Link to="/">Legal</Link></div>
