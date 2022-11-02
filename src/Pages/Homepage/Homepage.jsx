@@ -1,6 +1,6 @@
 import React from 'react'
-import "../Components/websiteTheme.css";
-import { BigTreeImage, GreenPowerImage, IPadHandsImage } from '../Images';
+import "./homepage.css";
+import { BigTreeImage, GreenPowerImage, IPadHandsImage } from '../../Images';
 
 const Homepage = () => {
   return (

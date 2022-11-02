@@ -1,5 +1,5 @@
 import React from "react";
-import "./compareItem.css"
+import "./compareItem.css";
 
 const CompareItem = () => {
   return(
