@@ -143,8 +143,8 @@ input {
     background-image: url("../Images/backgroundImage.jpg");
     opacity: 0.3;
     /* Full height */
-    height: 120vh;
-    width: 98.5vw;
+    height: 100%;
+    width: 100%;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;

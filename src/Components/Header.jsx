@@ -39,7 +39,7 @@ const Header = () => {
       </div>
       <div>
         <div className="header">
-          <input className="inputToCompare" type="text" placeholder="Compare Products"></input>
+          <input className="inputToCompare" type="text" placeholder="Search Products"></input>
           <div className="headerText">Laptops</div>
           <div className="headerText">Desktop PCs</div>
           <div className="headerText">Smartphones</div>
