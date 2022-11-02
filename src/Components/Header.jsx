@@ -23,7 +23,7 @@ const Header = () => {
           <div className="aboveHeaderItems">
             <img className="otherHeaderLogos" src={AccountLogo} alt="" />
             <div className="aboveHeaderSingleText">
-              <Link to="/">Account</Link></div>
+              <Link to="/signin">Account</Link></div>
           </div>
           <div className="aboveHeaderItems">
             <img className="otherHeaderLogos" src={ContactLogo} alt="" />
