@@ -55,7 +55,7 @@ const SignIn = () => {
                         type={"password"}
                         name={"password"}
                         placeholder={"password123"}
-                        minlength={6}
+                        minLength={6}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />

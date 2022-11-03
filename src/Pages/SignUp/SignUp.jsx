@@ -82,7 +82,7 @@ const SignUp = () => {
                         placeholder={"password123"}
                         name={"password"}
                         type={"password"}
-                        minlength={6}
+                        minLength={6}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
