@@ -16,6 +16,7 @@ const Navbar = () => {
 }
 
 const Header = () => {
+
   return (
     <div className="header">
       <div className="headerContent">
@@ -23,11 +24,11 @@ const Header = () => {
           <Logo width="200" height="116" />
         </Link>
         <Link to="/" className="logoWithText">
-          <Messages3 />
+          <Messages3 size={33}/>
           <div>Contact</div>
         </Link>
         <Link to="/signin" className="logoWithText">
-          <Profile />
+          <Profile size={33}/>
           <div>Sign in</div>
         </Link>
       </div>

@@ -38,4 +38,5 @@ input {
 .container {
     position: relative;
     min-height: 100vh;
+    font-family: 'Open Sans';
 }
