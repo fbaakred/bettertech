@@ -9,9 +9,9 @@ import "./websiteTheme.css";
 
 const App = () => {
   return (
-    <div>
-      <Header />
+    <div className="container">
       <div className="content">
+        <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/signin" element={<SignIn />} />

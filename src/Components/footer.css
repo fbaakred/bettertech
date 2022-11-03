@@ -5,8 +5,10 @@
     align-items: center;
     background-color: #E6E6E6;
     color: #000000;
-    padding: 1em;
     padding-left: 2em;
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem; 
 }
 
 .footerText {
