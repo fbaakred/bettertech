@@ -6,6 +6,7 @@ import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import Footer from "./Components/Footer";
 import "./websiteTheme.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (

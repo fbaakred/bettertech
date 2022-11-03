@@ -87,7 +87,7 @@ const SignUp = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </Form.Group>
-                <Button type={"submit"}>Create user</Button>
+                <button type={"submit"} className="signUpButton">Create user</button>
                 <div>
                     Already a user? <Link to={"/signin"}>Sign in here!</Link>
                 </div>

@@ -17,3 +17,21 @@
     flex-direction: column;
     min-width: 400px;
 }
+
+.signUpButton {
+    background: #0FA958;
+    color: white;
+    border: 2px solid #0FA958;
+    border-radius: 3px;
+    border-color: 2px solid lightgrey;
+    padding: 5px 10px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.signUpButton:hover {
+    background: #0FA958;
+    color: #fff;
+    border: 2px solid lightgrey;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
