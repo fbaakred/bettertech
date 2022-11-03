@@ -6,6 +6,9 @@ import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import Footer from "./Components/Footer";
 import ProfilePage from "./Pages/ProfilePage";
+import Laptopspage from "./Pages/Productpages/Laptopspage";
+import Smartphonespage from "./Pages/Productpages/Smartphonespage";
+import Computerspage from "./Pages/Productpages/Computerspage";
 import "./websiteTheme.css";
 
 const App = () => {
@@ -19,6 +22,9 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/compare" element={<Comparepage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/laptops" element={<Laptopspage />} />
+          <Route path="/smartphones" element={<Smartphonespage />} />
+          <Route path="/computers" element={<Computerspage />} />
         </Routes>
         <Footer />
       </div>
