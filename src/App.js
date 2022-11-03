@@ -5,6 +5,7 @@ import Comparepage from "./Pages/Comparepage";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import Footer from "./Components/Footer";
+import ProfilePage from "./Pages/ProfilePage";
 import "./websiteTheme.css";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/compare" element={<Comparepage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
         <Footer />
       </div>
