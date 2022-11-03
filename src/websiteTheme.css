@@ -30,8 +30,13 @@ input {
 }
 
 .content {
-    float: left;
-    position: relative;
-    top: 170px;
+    padding-top: 170px;
     width: 100%;
+    padding-bottom: 2.5rem;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    font-family: 'Open Sans';
 }
