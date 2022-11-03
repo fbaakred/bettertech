@@ -1,22 +1,8 @@
-a:visited {
+a {
     text-decoration: none;
     color: #000000;
 }
 
-a:hover {
-    text-decoration: none;
-    color: #000000;
-}
-
-a:focus {
-    text-decoration: none;
-    color: #000000;
-}
-
-a:active {
-    text-decoration: none;
-    color: #000000;
-}
 
 input {
     text-align: center;
