@@ -5,7 +5,6 @@ import "../websiteTheme.css";
 
 const Footer = () => {
   return (
-    <div>
       <div className="footer">
         <div className="footerText">Copyright - 2022 BetterTech Inc. All rights reserved.</div>
         <div className="footerText"><Link to="/">Privacy Policy</Link></div>
@@ -13,7 +12,6 @@ const Footer = () => {
         <div className="footerText"><Link to="/">Legal</Link></div>
         <div className="footerText"><Link to="/">Back To Top</Link></div>
       </div>
-    </div>
   );
 }
 
