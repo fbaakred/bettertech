@@ -36,8 +36,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 6em;
+  padding-right: 6em;
 }
 
 .navbaritem {
