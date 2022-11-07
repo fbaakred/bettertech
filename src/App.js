@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/compare" element={<Comparepage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/laptops" element={<Productspage type="laptops" />} />
-          <Route path="/smartphones" element={<Productspage type="laptops"/>} />
+          <Route path="/smartphones" element={<Productspage type="smartphones"/>} />
           <Route path="/computers" element={<Productspage type="computers"/>} />
         </Routes>
         <Footer />

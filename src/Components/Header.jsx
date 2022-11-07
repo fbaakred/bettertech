@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <input className="inputToCompare" type="text" placeholder="Search Products" />
-      <Link to="/compare" className="navbaritem"> Laptops </Link>
+      <Link to="/laptops" className="navbaritem"> Laptops </Link>
       <Link to="/smartphones" className="navbaritem"> Smartphones </Link>
       <Link to="/computers" className="navbaritem"> Desktop Computers </Link> 
     </div>
