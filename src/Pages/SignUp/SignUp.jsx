@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
 import "./signup.css";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { getDatabase, ref, set } from "firebase/database";
 
 /**
@@ -60,6 +60,7 @@ const SignUp = () => {
                 <Form.Group>
                     <Form.Label>Username</Form.Label>
                     <Form.Control
+                        className = "inputField"
                         placeholder={"John Smith"}
                         name={"displayName"}
                         value={displayName}
@@ -69,6 +70,7 @@ const SignUp = () => {
                 <Form.Group>
                     <Form.Label>Email</Form.Label>
                     <Form.Control
+                        className = "inputField"
                         placeholder={"example@domain.com"}
                         name={"email"}
                         type={"email"}
@@ -77,8 +79,9 @@ const SignUp = () => {
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Passord</Form.Label>
+                    <Form.Label>Password</Form.Label>
                     <Form.Control
+                        className = "inputField"
                         placeholder={"password123"}
                         name={"password"}
                         type={"password"}
@@ -87,7 +90,7 @@ const SignUp = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </Form.Group>
-                <Button type={"submit"}>Create user</Button>
+                <button type={"submit"} className="signUpButton">Create user</button>
                 <div>
                     Already a user? <Link to={"/signin"}>Sign in here!</Link>
                 </div>
