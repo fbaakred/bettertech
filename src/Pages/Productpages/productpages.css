@@ -26,3 +26,14 @@
 .productGridItem>img {
   max-width: 25vw;
 }
+
+.addToCompareButton {
+  content: "Compare";
+  padding: 5px;
+}
+
+.removeFromCompareButton {
+  content: "Remove";
+  background-color: red;
+  padding: 5px;
+}

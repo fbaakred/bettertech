@@ -24,7 +24,6 @@ const Productspage = (props) => {
         })
     }, [props.type]);
 
-
     return (
         <div>
             <div className="pageHeadline"> Results </div>
@@ -33,6 +32,7 @@ const Productspage = (props) => {
                     <ProductItem
                         key={obj.id}
                         productName={obj.name}
+                        productKey={obj.id}
                     />
                 ))}
             </div>
