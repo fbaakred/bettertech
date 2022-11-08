@@ -46,7 +46,7 @@ const Productspage = (props) => {
 
         const productCopy = state;
         const filtered = productCopy.filter(obj => {
-            return obj.category === sustFilter;
+            return obj.co2score === sustFilter;
         });
         setState(filtered);
       
@@ -62,12 +62,12 @@ const Productspage = (props) => {
                     <option value="highlow">Price: High-Low</option>
                 </select>
                 <select className="selections" onChange={(e) => setSustFilter(e.target.value)}>
-                    <option value="default">Filter By Sustainability</option>
-                    <option value="catA">Category A</option>
-                    <option value="catB">Category B</option>
-                    <option value="catC">Category C</option>
-                    <option value="catD">Category D</option>
-                    <option value="catE">Category E</option>
+                    <option value="default">Filter By CO2-Score</option>
+                    <option value="A" style={{backgroundColor: "#63BE7B"}}>Category A</option>
+                    <option value="B" style={{backgroundColor: "#8BC97D"}}>Category B</option>
+                    <option value="C" style={{backgroundColor: "#F9E983"}}>Category C</option>
+                    <option value="D" style={{backgroundColor: "#FB9F76"}}>Category D</option>
+                    <option value="E" style={{backgroundColor: "#F8696B"}}>Category E</option>
                 </select>
             </div>
             <div className="productGridContainer">
