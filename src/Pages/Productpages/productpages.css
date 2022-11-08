@@ -1,7 +1,11 @@
-.pageHeadline {
-  text-align: center;
-  padding: 0.4em;
-  font-size: 22px;
+.sortFilterBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  font-size: 12px;
   border-radius: 10px;
   background-color: rgb(245, 245, 245);
 }
@@ -25,4 +29,19 @@
 
 .productGridItem>img {
   max-width: 25vw;
+  padding-bottom: 1em;
+}
+
+.boldProduct {
+  font-weight: bold;
+}
+
+.greenCO2 {
+  color: #0FA958;
+}
+
+.selections {
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 0.25em;
 }

@@ -2,29 +2,39 @@ import React from "react";
 import "./productpages.css";
 import { db } from "../../firebase";
 import ProductItem from "./ProductItem";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
-const Productspage = (props) => {
+const Resultspage = () => {
 
     const [state, setState] = useState([]);
     const [sortType, setSortType] = useState("default");
     const [sustFilter, setSustFilter] = useState("default");
 
+    const { search } = window.location;
+    const searchQuery = new URLSearchParams(search).get('s');
+    const q1 = query(collection(db, "laptops"), where("name", "==", searchQuery));
+    const q2 = query(collection(db, "smartphones"), where("name", "==", searchQuery));
+    const queries = [q1, q2];
+
     useEffect(() => {
         const products = [];
-        getDocs(collection(db, props.type)).then((querySnapshot) => {
-            console.log("Database Objects Found:")
-            querySnapshot.forEach((doc) => {
-                console.log(doc.id, " => ", doc.data());
-                products.push({
-                    ...doc.data(),
-                    id: doc.id
+
+        queries.forEach((q) => {
+            getDocs(q).then((querySnapshot) => {
+                console.log("Database Objects Found:")
+                querySnapshot.forEach((doc) => {
+                    console.log(doc.id, " => ", doc.data());
+                    products.push({
+                        ...doc.data(),
+                        id: doc.id
+                    });
                 });
-            });
-            setState(products);
+            })
         })
-    }, [props.type]);
+        setState(products);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     useEffect(() => {
 
@@ -49,7 +59,7 @@ const Productspage = (props) => {
             return obj.category === sustFilter;
         });
         setState(filtered);
-      
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sustFilter]);
 
@@ -86,4 +96,4 @@ const Productspage = (props) => {
 }
 
 
-export default Productspage;
+export default Resultspage;

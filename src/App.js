@@ -7,6 +7,7 @@ import SignUp from "./Pages/SignUp";
 import Footer from "./Components/Footer";
 import ProfilePage from "./Pages/ProfilePage";
 import Productspage from "./Pages/Productpages/Productspage";
+import Resultspage from "./Pages/Productpages/Resultspage";
 import "./websiteTheme.css";
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/laptops" element={<Productspage type="laptops" />} />
           <Route path="/smartphones" element={<Productspage type="smartphones"/>} />
           <Route path="/computers" element={<Productspage type="computers"/>} />
+          <Route path="/results" element={<Resultspage />} />
         </Routes>
         <Footer />
       </div>

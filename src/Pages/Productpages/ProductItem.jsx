@@ -8,7 +8,9 @@ export const ProductItem = (props) => {
         <div>
             <div className="productGridItem">
                 <img src={MacBookPro} alt="productphoto" />
-                <div> {props.productName} </div>
+                <div className="boldProduct"> {props.id} </div>
+                <div> {props.price} € </div>
+                <div className="greenCO2"> CO2: {props.footprint} Kg </div>
             </div>
         </div>
     );
