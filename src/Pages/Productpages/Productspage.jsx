@@ -15,11 +15,19 @@ const Productspage = (props) => {
         getDocs(collection(db, props.type)).then((querySnapshot) => {
             console.log("Database Objects Found:")
             querySnapshot.forEach((doc) => {
-                console.log(doc.id, " => ", doc.data());
-                products.push({
+                const unordered = {
                     ...doc.data(),
                     id: doc.id
-                });
+                }
+                const ordered = Object.keys(unordered).sort().reduce(
+                    (obj, key) => { 
+                      obj[key] = unordered[key]; 
+                      return obj;
+                    }, 
+                    {}
+                );
+                console.log(ordered)
+                products.push(ordered);
             });
             setState(products);
         })
@@ -32,8 +40,7 @@ const Productspage = (props) => {
                 {state.map((obj) => (
                     <ProductItem
                         key={obj.id}
-                        productName={obj.name}
-                        productKey={obj.id}
+                        product={obj}
                     />
                 ))}
             </div>

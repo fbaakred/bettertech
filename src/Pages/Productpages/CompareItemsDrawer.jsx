@@ -8,15 +8,17 @@ const DrawerItem = (props) => {
 
   const [compareItems, setCompareItems] = useRecoilState(itemsToCompare);
 
+  const product = props.item;
+
   const removeItem = () => { 
-    const items = compareItems.filter(item => item !== props.name);
+    const items = compareItems.filter(item => item !== product);
     setCompareItems(items);
   }
 
   return (
     <div>
       <img src={MacBookPro} alt="productphoto" height={"100px"} width={"140px"}/>
-      <div> {props.name} </div>
+      <div> {product.name} </div>
       <button onClick={removeItem}> Remove </button>
     </div>
   );
@@ -31,7 +33,7 @@ const CompareItemsDrawer = () => {
     <div className={selectedItems.length === 0 ? "drawerClosed" : "drawerOpen"}>
       <div className='drawerContent'>
         {selectedItems.map((item, key) => (
-        <DrawerItem key={key} name={item}/>
+        <DrawerItem key={key} item={item}/>
         ))}
       </div>
       <div className='drawerButtons'>

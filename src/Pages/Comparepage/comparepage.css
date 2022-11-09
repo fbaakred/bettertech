@@ -1,9 +1,22 @@
 .compareView {
   display: flex;
+
 }
 
 .compareHeadline {
   text-align: center;
   padding: 0.4em;
   font-size: 60px;
+}
+
+.statsToCompare {
+  padding-top: 210px;
+  margin-left: 4em;
+  margin-right: 4em;
+  display: flex;
+  flex-direction: column;
+}
+
+.statDiv {
+  margin-bottom: 20px;
 }

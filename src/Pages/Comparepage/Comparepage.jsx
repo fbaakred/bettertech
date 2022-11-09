@@ -41,10 +41,18 @@ const Comparepage = () => {
     <div>
       <div className="compareHeadline"> Compare </div>
       <div className="compareView">
+        <div className="statsToCompare">
+          {Object.keys(selectedItems[0]).map((value, key) => (
+            value === "nameArray" ? <></> :
+            <div key={key} className="statDiv">
+              {value}
+            </div>
+          ))}
+        </div>
         {selectedItems.map((obj, key) => (
           <CompareItem 
             key={key}
-            item={obj}
+            product={obj}
           /> 
         ))}
       </div>
