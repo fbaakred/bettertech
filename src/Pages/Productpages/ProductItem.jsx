@@ -3,7 +3,6 @@ import "./productpages.css";
 import { MacBookPro } from "../../Images";
 import { useRecoilState } from "recoil";
 import { itemsToCompare } from "../../Recoil/Atoms/itemsToCompare";
-import CompareItemsDrawer from "../../Components/CompareItemsDrawer";
 
 export const ProductItem = (props) => {
 
@@ -17,7 +16,6 @@ export const ProductItem = (props) => {
     return (
         <div>
             <div className="productGridItem">
-            <CompareItemsDrawer />
                 <img src={MacBookPro} alt="productphoto" />
                 <div> {props.productName} </div>
                 {selectedItems.includes(props.productKey) ?
