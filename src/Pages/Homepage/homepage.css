@@ -1,105 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
-.hpFullDiv {
-  width: 100%;
-  height: auto;
-  position: relative;
-  overflow-y: auto;
+.container {
   display: flex;
-  padding-top: 5em;
-  border-radius: 20px;
-  overflow: auto;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
-.hpHalfDivWhiteLeft {
-  display: block;
-  float: left;
-  width: 50%;
-  background-color: #FFFFFF;
-  height: 425px;
-  border-top-left-radius: 20px;
-  overflow: auto;
+.firstSubContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: -10px;
 }
 
-.hpHalfDivWhiteRight {
-  display: block;
-  float: left;
-  width: 50%;
-  background-color: #FFFFFF;
-  height: 425px;
-  border-top-right-radius: 20px;
-  overflow: auto;
-}
-
-.hpHalfDivGreenLeft {
-  display: block;
-  float: left;
-  width: 50%;
+.secondSubContainer {
   background-color: #0FA958;
-  height: 385px;
-  padding-top: 2.5em;
-  border-top-left-radius: 20px;
-  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  align-items: center;
 }
 
-.hpHalfDivGreenRight {
-  display: block;
-  float: left;
+.balloonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+}
+
+.treeContainer {
+  margin-left: 20px;
+}
+
+.lightBulbAndWaveContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.textContainer {
   width: 50%;
-  background-color: #0FA958;
-  height: 385px;
-  padding-top: 2.5em;
-  border-top-right-radius: 20px;
-  overflow: auto;
 }
 
-.hpTextH {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  text-align: center;
-  padding-left: 2em;
-  padding-right: 2em;
+.infoTextTitle {
+  font-family: 'Rancho', cursive;
+  font-size: 45px;
+  color: white;
+  white-space: nowrap;
+  margin-left: -15px;
 }
 
-.hpTextP {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  text-align: center;
-  padding-left: 2em;
-  padding-right: 2em;
-}
-
-.hpImg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: contain;
-  height: auto;
-  max-height: 425px;
-}
-
-.topDiv {
-  position: relative;
-  z-index: 1;
-}
-
-.topDiv .bgImg {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-image: url("../../Images/backgroundImage.jpg");
-  opacity: 0.3;
-  /* Full height */
-  height: 100%;
-  width: 100%;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.infoText {
+  font-size: 24px;
+  color: white;
 }
