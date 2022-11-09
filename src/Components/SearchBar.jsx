@@ -7,7 +7,7 @@ const SearchBar = () => {
         <form action="/results" method="get" >
             <label htmlFor="header-search" />
             <input className="inputToCompare" type="text" placeholder="Search Products" name="s" id="header-search" />
-            <button className="submitButton" type="submit">Go!</button>
+            <button className="submitButton" type="submit">Go</button>
         </form>
 
     );
