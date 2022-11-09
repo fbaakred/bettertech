@@ -54,7 +54,7 @@ CompareItemsDrawer
   border-style: solid;
   background-color: #ffffff;
   bottom: 0;
-  position: absolute;
+  position: fixed;
   z-index: 3;
 }
 

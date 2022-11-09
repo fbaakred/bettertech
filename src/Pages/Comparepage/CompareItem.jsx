@@ -1,5 +1,6 @@
 import React from "react";
 import "./compareItem.css";
+import { MacBookPro } from "../../Images";
 
 const CompareItem = (props) => {
 
@@ -7,12 +8,14 @@ const CompareItem = (props) => {
 
   return(
     <div className="compareItem">
-      <img src={props.photo} alt="productphoto"/>
+      <img src={MacBookPro} alt="productphoto" />
+      <div> {props.item} </div>
+       {/*
       <div> {props.type} </div>
       <div> {props.brand} </div>
       <div> {props.productName} </div>
       <div> {props.co2Footprint} </div>
-      {/*
+     
       <div> {props.price} </div>
       <div> {props.displaySize} </div>
       <div> {props.displayResolution} </div>
