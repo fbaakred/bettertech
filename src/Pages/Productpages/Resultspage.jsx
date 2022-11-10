@@ -135,7 +135,10 @@ const Resultspage = () => {
             </div>
             <div>
                 {!state.length ? (
-                    <div className="noResultsDiv">No Products Could Be Found.</div>
+                    <div className="noResultsDiv">
+                        <p>No Products Could Be Found:</p>
+                        <p>Please Refine Your Search Criteria.</p>
+                    </div>
                 ) : (
                     <div className="productGridContainer">
                         {state.map((obj) => (
