@@ -137,7 +137,7 @@ const Resultspage = () => {
                 {!state.length ? (
                     <div className="noResultsDiv">
                         <p>No Products Could Be Found:</p>
-                        <p>Please Refine Your Search Criteria.</p>
+                        <p>Please Refine Your Search And Filter Criteria.</p>
                     </div>
                 ) : (
                     <div className="productGridContainer">
