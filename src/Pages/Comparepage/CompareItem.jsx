@@ -1,26 +1,27 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import "./compareItem.css";
+import { storage } from "../../firebase";
+import { getDownloadURL, ref } from "firebase/storage";
+import { getCo2ScoreIcon } from "../../Icons/Co2Scores";
 
 const CompareItem = (props) => {
 
-  //product type, brand, product name, price, co2 footprint, display size, display reoslution, processor, ram, ssd, os
+  const [imgURL, setImgUrl] = useState('');
+
+  const product = props.product;
+
+  useEffect(() => {
+    getDownloadURL(ref(storage, product.id + '.jpg')).then((url) => {
+        setImgUrl(url);
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return(
     <div className="compareItem">
-      <img src={props.photo} alt="productphoto"/>
-      <div> {props.type} </div>
-      <div> {props.brand} </div>
-      <div> {props.productName} </div>
-      <div> {props.co2Footprint} </div>
-      {/*
-      <div> {props.price} </div>
-      <div> {props.displaySize} </div>
-      <div> {props.displayResolution} </div>
-      <div> {props.processor} </div>
-      <div> {props.ram} </div>
-      <div> {props.ssd} </div>
-      <div> {props.os} </div>
-      */}
+      <img src={imgURL} alt="productphoto" />
+      {getCo2ScoreIcon(product.co2score)}
+      <div> {product.co2footprint} Kg </div> 
     </div>
   );
 }

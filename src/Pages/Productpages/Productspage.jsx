@@ -4,6 +4,7 @@ import { db } from "../../firebase";
 import ProductItem from "./ProductItem";
 import { getDocs, collection } from "firebase/firestore";
 import { useEffect, useState, useRef } from "react";
+import CompareItemsDrawer from "./CompareItemsDrawer";
 
 const Productspage = (props) => {
 
@@ -27,9 +28,7 @@ const Productspage = (props) => {
 
         // fetch data
         getDocs(collection(db, props.type)).then((querySnapshot) => {
-            console.log("Database Objects Found:")
             querySnapshot.forEach((doc) => {
-                console.log(doc.id, " => ", doc.data());
                 products.current.push({
                     ...doc.data(),
                     id: doc.id
@@ -132,13 +131,11 @@ const Productspage = (props) => {
                 {state.map((obj) => (
                     <ProductItem
                         key={obj.id}
-                        id={obj.id}
-                        productName={obj.name}
-                        price={obj.price1}
-                        footprint={obj.co2footprint}
+                        product={obj}
                     />
                 ))}
             </div>
+            <CompareItemsDrawer />
         </div>
     );
 }
