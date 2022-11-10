@@ -10,7 +10,7 @@ import BLogo from "../../Components/BLogo";
 const Homepage = () => {
     return (
         <div className={"container"}>
-            <div className={"firstSubContainer"}>
+            <div className={"whiteSubContainer"}>
                 <div className={"balloonContainer"}>
                     <div />
                     <div>
@@ -24,8 +24,8 @@ const Homepage = () => {
                     <Trees width={1018} height={490}/>
                 </div>
             </div>
-            <div className={"secondSubContainer"}>
-                <div className={"lightBulbAndWaveContainer"}>
+            <div className={"greenSubContainer"}>
+                <div className={"lightBulbContainer"}>
                     <LightBulb width={319} height={476}/>
                 </div>
 
@@ -49,7 +49,7 @@ const Homepage = () => {
                 </div>
 
             </div>
-            <div className={"lightBulbAndWaveContainer"}>
+            <div className={"waveContainer"}>
                 <Wave width={"100%"} height={284}/>
             </div>
         </div>

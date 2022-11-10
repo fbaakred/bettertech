@@ -6,19 +6,19 @@
   margin-top: 50px;
 }
 
-.firstSubContainer {
+.whiteSubContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   margin-bottom: -10px;
 }
 
-.secondSubContainer {
+.greenSubContainer {
   background-color: #0FA958;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  border-radius: 10px;
+  border-radius: 20px;
   align-items: center;
 }
 
@@ -32,7 +32,7 @@
   margin-left: 20px;
 }
 
-.lightBulbAndWaveContainer {
+.lightBulbContainer {
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -46,10 +46,16 @@
   font-size: 45px;
   color: white;
   white-space: nowrap;
-  margin-left: -15px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .infoText {
   font-size: 24px;
   color: white;
+}
+
+.waveContainer {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
