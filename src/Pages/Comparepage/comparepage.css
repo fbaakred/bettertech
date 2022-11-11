@@ -1,6 +1,10 @@
 .compareView {
   display: flex;
+}
 
+.comparePage {
+  display: flex;
+  flex-direction: column;
 }
 
 .compareHeadline {
@@ -22,5 +26,22 @@
 }
 
 .techButton {
-  
+  margin-bottom: 10px;
+  height: 10vh;
+  width: 30vw;
+  background-color: white;
+  border: 2px solid #0fa95770;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  font-size: larger;
+  justify-content: center;
+}
+
+.techButton:hover {
+  background-color: #0fa95770;
+}
+
+.techButtonDiv {
+  align-self: center;
 }

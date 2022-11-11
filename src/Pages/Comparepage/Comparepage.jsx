@@ -4,6 +4,7 @@ import CompareItem from "./CompareItem";
 import "./comparepage.css";
 import itemsToCompare from "../../Recoil/Atoms/itemsToCompare";
 import showTechSpecs from "../../Recoil/Atoms/showTechSpecs";
+import { ArrowDown2, ArrowUp2 } from "iconsax-react";
 
 const Comparepage = () => {  
 
@@ -11,7 +12,7 @@ const Comparepage = () => {
   const [showSpecs, setShowSpecs] = useRecoilState(showTechSpecs);
   
   return(
-    <div>
+    <div className="comparePage">
       <div className="compareHeadline"> Compare </div>
       <div className="compareView">
         <div className="statsToCompare">
@@ -24,9 +25,12 @@ const Comparepage = () => {
           /> 
         ))}
       </div>
-      <button className="techButton" onClick={() => setShowSpecs(!showSpecs)}> 
-        {showSpecs ? "Hide Tech Specs" : "Show Tech Specs"} 
-      </button>
+      <div className="techButtonDiv">
+        <button className="techButton" onClick={() => setShowSpecs(!showSpecs)}> 
+          {showSpecs ? <ArrowUp2 /> : <ArrowDown2 />}
+          {showSpecs ? "Hide Tech Specs" : "Show Tech Specs"} 
+        </button>
+      </div>
     </div>
   );
 }
