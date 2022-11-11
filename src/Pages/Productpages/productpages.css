@@ -32,22 +32,9 @@
 }
 
 .productGridItem>img {
-  max-width: 25vw;
-}
-
-.addToCompareButton {
-  content: "Compare";
-  padding: 5px;
-}
-
-.removeFromCompareButton {
-  content: "Remove";
-  background-color: red;
-  padding: 5px;
-}
-
-.productPageContainer {
-  display: flex;
+  max-width: 22vw;
+  max-height: 15vw;
+  padding-bottom: 1em;
 }
 
 .boldProduct {
@@ -83,39 +70,3 @@
   font-size: 18px;
   padding: 10em;
 }
-
-/*
-CompareItemsDrawer
-*/
-
-.drawerOpen {
-  width: 100%;
-  display: flex;
-  border-radius: 3px;
-  border-color: black;
-  border-style: solid;
-  background-color: #ffffff;
-  bottom: 0;
-  position: fixed;
-  z-index: 3;
-}
-
-.drawerClosed {
-  visibility: hidden;
-  width: 0;
-  height: 0;
-}
-
-.drawerContent {
-  margin-right: auto;
-  display: flex;
-}
-
-.drawerButtons {
-  display: flex;
-  flex-direction: column;
-  max-width: 22vw;
-  max-height: 15vw;
-  padding-bottom: 1em;
-}
-
