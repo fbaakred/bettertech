@@ -35,7 +35,7 @@ const Comparepage = () => {
 
   //const products = [rowNames, obj1, obj2];
 
-  const [selectedItems, setSelectedItems] = useRecoilState(itemsToCompare);
+  const [selectedItems] = useRecoilState(itemsToCompare);
   
   return(
     <div>
