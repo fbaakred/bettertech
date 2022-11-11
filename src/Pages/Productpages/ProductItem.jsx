@@ -1,15 +1,27 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import "./productpages.css";
 import { storage } from "../../firebase";
-import { useEffect } from "react";
 import { getDownloadURL, ref } from "firebase/storage";
+import { useRecoilState } from "recoil";
+import itemsToCompare from "../../Recoil/Atoms/itemsToCompare";
+import { Additem } from "iconsax-react";
+import { getBackgroundColor } from "../../utils";
+import { getCo2ScoreIcon } from "../../Icons/Co2Scores";
 
 export const ProductItem = (props) => {
 
     const [imgURL, setImgUrl] = useState('');
+    const [selectedItems, setSelectedItems] = useRecoilState(itemsToCompare);
+
+    const product = props.product;
+
+    const removeItem = () => { 
+        const items = selectedItems.filter(item => item.name !== product.name);
+        setSelectedItems(items);
+    }
 
     useEffect(() => {
-        getDownloadURL(ref(storage, props.id + '.jpg')).then((url) => {
+        getDownloadURL(ref(storage, product.id + '.jpg')).then((url) => {
             setImgUrl(url);
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -17,11 +29,23 @@ export const ProductItem = (props) => {
 
     return (
         <div className="itemContainer">
-            <div className="productGridItem">
+            <div className="productGridItem" style={{backgroundColor: getBackgroundColor(product.co2score)}}>
                 <img src={imgURL} alt="productphoto" />
-                    <div className="boldProduct"> {props.id} </div>
-                    <div> {props.price} € </div>
-                    <div className="greenCO2"> CO2: {props.footprint} Kg </div>
+                <div className="boldProduct"> {product.name} </div>
+                {getCo2ScoreIcon(product.co2score)}
+                <div> {product.price1} € </div>
+                <div>
+                    {selectedItems.find(item => item.id === product.id) ?
+                    <button className="removeFromCompareButton" onClick={() => removeItem()}>
+                        Remove
+                    </button>
+                    :
+                    <button className="addToCompareButton" onClick={() => setSelectedItems([...selectedItems, product])}>
+                        <Additem></Additem>
+                        <div> Compare Product </div>
+                    </button>
+                    }
+                </div>
             </div>
         </div>
     );

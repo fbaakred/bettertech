@@ -2,7 +2,7 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import "./header.css"
 import { Profile, Messages3 } from "iconsax-react";
-import Logo from "./Logo";
+import Logo from "../Icons/Logo";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import SearchBar from "./SearchBar";
