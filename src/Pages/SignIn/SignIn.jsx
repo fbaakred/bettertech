@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, db } from "../../firebase";
+import { auth, /*db*/ } from "../../firebase";
 import "./signin.css";
 import { Form } from "react-bootstrap";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { setDoc, doc } from "firebase/firestore";
+// import { setDoc, doc } from "firebase/firestore";
 
 /**
  * Component for signing in to profile
