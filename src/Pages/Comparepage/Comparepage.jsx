@@ -1,51 +1,38 @@
 import React from "react";
-import { Invisible, Lenovo, MacBookPro } from "../../Images";
+import { useRecoilValue, useRecoilState } from "recoil";
 import CompareItem from "./CompareItem";
 import "./comparepage.css";
+import itemsToCompare from "../../Recoil/Atoms/itemsToCompare";
+import showTechSpecs from "../../Recoil/Atoms/showTechSpecs";
+import { ArrowDown2, ArrowUp2, Back } from "iconsax-react";
+import { Link } from "react-router-dom";
 
-const rowNames = {
-  photo: Invisible,
-  type: "Type",
-  brand: "Brand",
-  productName: "Product name",
-  co2Footprint: "CO2 footprint"
-}
+const Comparepage = () => {  
 
-const obj1 = {
-  photo: MacBookPro,
-  type: "Computer",
-  brand: "Apple",
-  productName: "Macbook Pro 16",
-  co2Footprint: 500
-}
-
-const obj2 = {
-  photo: Lenovo,
-  type: "Computer",
-  brand: "Dell",
-  productName: "XPS 17",
-  co2Footprint: 400
-}
-
-const Comparepage = () => {
-  
-
-  const products = [rowNames, obj1, obj2];
+  const selectedItems = useRecoilValue(itemsToCompare);
+  const [showSpecs, setShowSpecs] = useRecoilState(showTechSpecs);
   
   return(
-    <div>
-      <div className="compareHeadline"> Compare </div>
+    <div className="comparePage">
+      <div className="topOfPage">
+        <Link to="/laptops">
+          <Back size={60}/>
+        </Link>
+        <div className="compareHeadline"> Compare </div>
+      </div>
       <div className="compareView">
-        {products.map((obj, key) => (
+        {selectedItems.map((obj, key) => (
           <CompareItem 
             key={key}
-            photo={obj.photo}
-            type={obj.type}
-            brand={obj.brand}
-            productName={obj.productName}
-            co2Footprint={obj.co2Footprint}
+            product={obj}
           /> 
         ))}
+      </div>
+      <div className="techButtonDiv">
+        <button className="techButton" onClick={() => setShowSpecs(!showSpecs)}> 
+          {showSpecs ? <ArrowUp2 /> : <ArrowDown2 />}
+          {showSpecs ? "Hide Tech Specs" : "Show Tech Specs"} 
+        </button>
       </div>
     </div>
   );
