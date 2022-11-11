@@ -1,41 +1,78 @@
 import React from 'react'
 import "./homepage.css";
-import { BigTreeImage, GreenPowerImage, IPadHandsImage } from '../../Images';
+import BalloonLight  from "../../Components/BalloonLight";
+import BalloonDark  from "../../Components/BalloonDark";
+import Trees from "../../Components/Trees";
+import LightBulb from "../../Components/LightBulb";
+import Wave from "../../Components/Wave";
+import BLogo from "../../Components/BLogo";
 
 const Homepage = () => {
-  return (
-    <div className="topDiv">
-      <div className="bgImg" />
-      <div className="hpFullDiv">
-        <div className="hpHalfDivWhiteLeft">
-          <h3 className="hpTextH">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices rhoncus aliquam, ornare risus. Nullam mi amet quam non tortor nisi.</h3>
-          <img className="hpImg" src={BigTreeImage} alt="" />
-        </div>
-        <div className="hpHalfDivWhiteRight">
-          <img className="hpImg" src={IPadHandsImage} alt="" />
-        </div>
-      </div>
-      <div className="hpFullDiv">
-        <div className="hpHalfDivGreenLeft">
-          <img className="hpImg" src={GreenPowerImage} alt="" />
-        </div>
-        <div className="hpHalfDivGreenRight">
-          <h3 className="hpTextH">Lorem Inspum</h3>
-          <p className="hpTextP">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices rhoncus aliquam, ornare risus. Nullam mi amet quam non tortor nisi. Nisl, non felis, purus amet consectetur mi. Ullamcorper at venenatis condimentum ultricies odio quam. Purus orci amet nisl, scelerisque pretium arcu dignissim egestas volutpat. Enim, a, imperdiet auctor neque, nullam. Duis mi arcu mi bibendum sed amet vehicula. Venenatis, viverra tellus dolor velit. Orci duis viverra nisl velit sed faucibus malesuada faucibus.</p>
-        </div>
-      </div>
-      <div className="hpFullDiv">
-        <div className="hpHalfDivWhiteLeft">
-          <img className="hpImg" src={IPadHandsImage} alt="" />
-        </div>
-        <div className="hpHalfDivWhiteRight">
-          <h3 className="hpTextH">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices rhoncus aliquam, ornare risus. Nullam mi amet quam non tortor nisi.</h3>
-          <img className="hpImg" src={BigTreeImage} alt="" />
-        </div>
-      </div>
-    </div>
+    return (
+        <div className={"homepageContainer"}>
+            <div className={"whiteBackgroundContainer"}>
+                <div className={"infoTextContainer"}>
+                    <div className={"infoTextTitleContainer"}>
+                        <div className={"infoTextTitleBlack"}>
+                            <BLogo width={36} height={71}/>
+                            ecause together we can make the world a
+                        </div>
+                        <div className={"infoTextTitleBlack"}>
+                            <BLogo width={36} height={71}/>
+                            etter place to live in!
+                        </div>
+                    </div>
+                    <div className={"infoTextBlack"}>
+                        We are BetterTech! We honor our clients’ trust in us to help them with choosing more eco-friendly
+                        products. Here at BetterTech, we use scientific methods to evaluate the CO2 impact of each tech
+                        product and offer a viable comparison base which makes it easy for our customers to make their
+                        ethical purchase decision.
+                    </div>
+                </div>
+                <div className={"treesAndBalloonsContainer"}>
+                    <div className={"balloonsContainer"}>
+                        <div />
+                        <div>
+                            <BalloonLight width={116} height={173}/>
+                        </div>
+                        <div>
+                            <BalloonDark width={142} height={212}/>
+                        </div>
+                    </div>
+                    <div className={"treesContainer"}>
+                        <Trees width={"100%"} height={"auto"}/>
+                    </div>
+                </div>
+            </div>
+            <div className={"greenBackgroundContainer"}>
+                <div className={"lightBulbContainer"}>
+                    <LightBulb width={319} height={476}/>
+                </div>
+                <div className={"infoTextContainer"}>
+                    <div className={"infoTextTitleContainer"}>
+                        <div className={"infoTextTitleWhite"}>
+                            <BLogo width={36} height={71}/>
+                            ecause together we can make the world a
+                        </div>
+                        <div className={"infoTextTitleWhite"}>
+                            <BLogo width={36} height={71}/>
+                            etter place to live in!
+                        </div>
+                    </div>
+                    <div className={"infoTextWhite"}>
+                        We are BetterTech! We honor our clients’ trust in us to help them with choosing more eco-friendly
+                        products. Here at BetterTech, we use scientific methods to evaluate the CO<sub>2</sub> impact of each tech
+                        product and offer a viable comparison base which makes it easy for our customers to make their
+                        ethical purchase decision.
+                    </div>
+                </div>
 
-  );
+            </div>
+            <div className={"waveContainer"}>
+                <Wave width={"100%"} height={284}/>
+            </div>
+        </div>
+    )
 }
 
 export default Homepage;
