@@ -21,9 +21,6 @@ const Comparepage = () => {
         <div className="compareHeadline"> Compare </div>
       </div>
       <div className="compareView">
-        <div className="statsToCompare">
-          <div> CO2 Footprint</div>
-        </div>
         {selectedItems.map((obj, key) => (
           <CompareItem 
             key={key}

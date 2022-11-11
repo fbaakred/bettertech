@@ -4,6 +4,7 @@ import { db } from "../../firebase";
 import ProductItem from "./ProductItem";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { useEffect, useState, useRef } from "react";
+import CompareItemsDrawer from "./CompareItemsDrawer";
 
 const Resultspage = () => {
 
@@ -150,6 +151,7 @@ const Resultspage = () => {
                     </div>
                 )}
             </div>
+            <CompareItemsDrawer />
         </div>
     );
 }
