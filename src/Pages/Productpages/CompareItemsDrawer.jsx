@@ -5,6 +5,7 @@ import itemsToCompare from "../../Recoil/Atoms/itemsToCompare";
 import { Link } from 'react-router-dom';
 import { storage } from "../../firebase";
 import { getBackgroundColor } from "../../utils";
+import { ArrowSwapHorizontal } from "iconsax-react";
 
 const DrawerItem = (props) => {
 
@@ -49,9 +50,12 @@ const CompareItemsDrawer = () => {
             ))}
           </div>
           <div className='drawerButtons'>
-            <button onClick={() => setSelectedItems([])}> Remove all chosen items </button>
+            <button className="removeChosenButton" onClick={() => setSelectedItems([])}> Remove all chosen items </button>
             <Link to="/compare" className="navbaritem"> 
-              <button> Compare </button>
+              <button className="compareChosenButton"> 
+                <ArrowSwapHorizontal />
+                <div>Compare chosen items</div>
+              </button>
             </Link>
           </div>
         </div>
