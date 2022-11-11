@@ -9,40 +9,59 @@ import BLogo from "../../Components/BLogo";
 
 const Homepage = () => {
     return (
-        <div className={"container"}>
-            <div className={"whiteSubContainer"}>
-                <div className={"balloonContainer"}>
-                    <div />
-                    <div>
-                        <BalloonLight width={116} height={173}/>
-                    </div>
-                    <div>
-                        <BalloonDark width={142} height={212}/>
-                    </div>
-                </div>
-                <div className={"treeContainer"}>
-                    <Trees width={1018} height={490}/>
-                </div>
-            </div>
-            <div className={"greenSubContainer"}>
-                <div className={"lightBulbContainer"}>
-                    <LightBulb width={319} height={476}/>
-                </div>
-
-                <div className={"textContainer"}>
-                    <div>
-                        <div className={"infoTextTitle"}>
+        <div className={"homepageContainer"}>
+            <div className={"whiteBackgroundContainer"}>
+                <div className={"infoTextContainer"}>
+                    <div className={"infoTextTitleContainer"}>
+                        <div className={"infoTextTitleBlack"}>
                             <BLogo width={36} height={71}/>
                             ecause together we can make the world a
                         </div>
-                        <div className={"infoTextTitle"}>
+                        <div className={"infoTextTitleBlack"}>
                             <BLogo width={36} height={71}/>
                             etter place to live in!
                         </div>
                     </div>
-                    <div className={"infoText"}>
+                    <div className={"infoTextBlack"}>
                         We are BetterTech! We honor our clients’ trust in us to help them with choosing more eco-friendly
                         products. Here at BetterTech, we use scientific methods to evaluate the CO2 impact of each tech
+                        product and offer a viable comparison base which makes it easy for our customers to make their
+                        ethical purchase decision.
+                    </div>
+                </div>
+                <div className={"treesAndBalloonsContainer"}>
+                    <div className={"balloonsContainer"}>
+                        <div />
+                        <div>
+                            <BalloonLight width={116} height={173}/>
+                        </div>
+                        <div>
+                            <BalloonDark width={142} height={212}/>
+                        </div>
+                    </div>
+                    <div className={"treesContainer"}>
+                        <Trees width={"100%"} height={"auto"}/>
+                    </div>
+                </div>
+            </div>
+            <div className={"greenBackgroundContainer"}>
+                <div className={"lightBulbContainer"}>
+                    <LightBulb width={319} height={476}/>
+                </div>
+                <div className={"infoTextContainer"}>
+                    <div className={"infoTextTitleContainer"}>
+                        <div className={"infoTextTitleWhite"}>
+                            <BLogo width={36} height={71}/>
+                            ecause together we can make the world a
+                        </div>
+                        <div className={"infoTextTitleWhite"}>
+                            <BLogo width={36} height={71}/>
+                            etter place to live in!
+                        </div>
+                    </div>
+                    <div className={"infoTextWhite"}>
+                        We are BetterTech! We honor our clients’ trust in us to help them with choosing more eco-friendly
+                        products. Here at BetterTech, we use scientific methods to evaluate the CO<sub>2</sub> impact of each tech
                         product and offer a viable comparison base which makes it easy for our customers to make their
                         ethical purchase decision.
                     </div>
