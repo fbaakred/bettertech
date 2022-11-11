@@ -110,7 +110,7 @@ const Productspage = (props) => {
     }, [isReset]);
 
     return (
-        <div>
+        <div className="productsPage">
             <div className="sortFilterBar">
                 <select ref={selectSortingRef} className="selections" onChange={(e) => setSortType(e.target.value)}>
                     <option value="default">Sort By Price</option>
