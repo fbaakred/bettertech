@@ -144,10 +144,7 @@ const Resultspage = () => {
                         {state.map((obj) => (
                             <ProductItem
                                 key={obj.id}
-                                id={obj.id}
-                                productName={obj.name}
-                                price={obj.price1}
-                                footprint={obj.co2footprint}
+                                product={obj}
                             />
                         ))}
                     </div>
