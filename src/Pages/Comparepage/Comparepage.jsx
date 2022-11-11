@@ -4,7 +4,8 @@ import CompareItem from "./CompareItem";
 import "./comparepage.css";
 import itemsToCompare from "../../Recoil/Atoms/itemsToCompare";
 import showTechSpecs from "../../Recoil/Atoms/showTechSpecs";
-import { ArrowDown2, ArrowUp2 } from "iconsax-react";
+import { ArrowDown2, ArrowUp2, Back } from "iconsax-react";
+import { Link } from "react-router-dom";
 
 const Comparepage = () => {  
 
@@ -13,7 +14,12 @@ const Comparepage = () => {
   
   return(
     <div className="comparePage">
-      <div className="compareHeadline"> Compare </div>
+      <div className="topOfPage">
+        <Link to="/laptops">
+          <Back size={60}/>
+        </Link>
+        <div className="compareHeadline"> Compare </div>
+      </div>
       <div className="compareView">
         <div className="statsToCompare">
           <div> CO2 Footprint</div>
