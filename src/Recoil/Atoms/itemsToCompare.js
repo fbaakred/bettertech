@@ -1,6 +1,8 @@
 import { atom } from "recoil"
 
-export const itemsToCompare = atom({
+const itemsToCompare = atom({
   key: 'itemsToCompare',
-  default: [],
+  default: []
 });
+
+export default itemsToCompare;

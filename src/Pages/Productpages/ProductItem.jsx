@@ -3,7 +3,7 @@ import "./productpages.css";
 import { storage } from "../../firebase";
 import { getDownloadURL, ref } from "firebase/storage";
 import { useRecoilState } from "recoil";
-import { itemsToCompare } from "../../Recoil/Atoms/itemsToCompare";
+import itemsToCompare from "../../Recoil/Atoms/itemsToCompare";
 
 export const ProductItem = (props) => {
 
@@ -13,7 +13,7 @@ export const ProductItem = (props) => {
     const product = props.product;
 
     const removeItem = () => { 
-        const items = selectedItems.filter(item => item !== product);
+        const items = selectedItems.filter(item => item.name !== product.name);
         setSelectedItems(items);
     }
 
@@ -32,7 +32,7 @@ export const ProductItem = (props) => {
                 <div> {product.price1} € </div>
                 <div className="greenCO2"> CO2: {product.co2footprint} Kg </div>
                 {selectedItems.find(item => item.id === product.id) ?
-                <button className="removeFromCompareButton" onClick={removeItem}>
+                <button className="removeFromCompareButton" onClick={() => removeItem()}>
                     Remove
                 </button>
                 :

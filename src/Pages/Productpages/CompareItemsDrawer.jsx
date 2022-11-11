@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { getDownloadURL, ref } from "firebase/storage";
-import { itemsToCompare } from "../../Recoil/Atoms/itemsToCompare";
+import itemsToCompare from "../../Recoil/Atoms/itemsToCompare";
 import { Link } from 'react-router-dom';
 import { storage } from "../../firebase";
 
@@ -17,10 +17,10 @@ const DrawerItem = (props) => {
         setImgUrl(url);
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-}, []);
+  }, [compareItems]);
 
   const removeItem = () => {    
-    const items = compareItems.filter(item => item !== product); 
+    const items = compareItems.filter(item => item.name !== product.name); 
     setCompareItems(items);
   }
 

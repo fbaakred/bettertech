@@ -1,7 +1,6 @@
 .compareItem {
   flex: 1;
   text-align: center;
-  background-color: rgb(240, 240, 240);
   margin: 5px;
   border-radius: 5px;
   display: flex;
