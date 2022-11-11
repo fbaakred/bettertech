@@ -1,8 +1,11 @@
 import React from "react";
-import { Invisible, Lenovo, MacBookPro } from "../../Images";
+//import { Invisible, Lenovo, MacBookPro } from "../../Images";
+import { useRecoilState } from "recoil";
 import CompareItem from "./CompareItem";
 import "./comparepage.css";
+import { itemsToCompare } from "../../Recoil/Atoms/itemsToCompare";
 
+/*
 const rowNames = {
   photo: Invisible,
   type: "Type",
@@ -26,24 +29,30 @@ const obj2 = {
   productName: "XPS 17",
   co2Footprint: 400
 }
+*/
 
-const Comparepage = () => {
-  
+const Comparepage = () => {  
 
-  const products = [rowNames, obj1, obj2];
+  //const products = [rowNames, obj1, obj2];
+
+  const [selectedItems, setSelectedItems] = useRecoilState(itemsToCompare);
   
   return(
     <div>
       <div className="compareHeadline"> Compare </div>
       <div className="compareView">
-        {products.map((obj, key) => (
+        <div className="statsToCompare">
+          {Object.keys(selectedItems[0]).map((value, key) => (
+            value === "nameArray" ? <></> :
+            <div key={key} className="statDiv">
+              {value}
+            </div>
+          ))}
+        </div>
+        {selectedItems.map((obj, key) => (
           <CompareItem 
             key={key}
-            photo={obj.photo}
-            type={obj.type}
-            brand={obj.brand}
-            productName={obj.productName}
-            co2Footprint={obj.co2Footprint}
+            product={obj}
           /> 
         ))}
       </div>
