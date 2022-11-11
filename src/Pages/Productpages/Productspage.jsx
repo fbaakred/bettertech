@@ -2,10 +2,10 @@ import React from "react";
 import "./productpages.css";
 import { db } from "../../firebase";
 import ProductItem from "./ProductItem";
-import { getDocs, collection, query, where } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 import { useEffect, useState, useRef } from "react";
 
-const Resultspage = () => {
+const Productspage = (props) => {
 
     const [state, setState] = useState([]);
     const [sortType, setSortType] = useState("default");
@@ -21,31 +21,26 @@ const Resultspage = () => {
     const selectFilterRef = useRef(null);
 
     useEffect(() => {
+        // empty array 
+        // reset required since Laptops, Smartphones and Computers use the same Component
+        products.current = [ ];
 
-        const { search } = window.location;
-        const searchQuery = new URLSearchParams(search).get('s');
-        const searchQueryArray = searchQuery ? searchQuery.split(" ") : [""];
-        const q1 = query(collection(db, "laptops"), where('nameArray', 'array-contains-any', searchQueryArray));
-        const q2 = query(collection(db, "smartphones"), where('nameArray', 'array-contains-any', searchQueryArray));
-        const queries = [q1, q2];
-
-        queries.forEach((q) => {
-            getDocs(q).then((querySnapshot) => {
-                console.log("Database Objects Found:")
-                querySnapshot.forEach((doc) => {
-                    console.log(doc.id, " => ", doc.data());
-                    products.current.push({
-                        ...doc.data(),
-                        id: doc.id
-                    });
+        // fetch data
+        getDocs(collection(db, props.type)).then((querySnapshot) => {
+            console.log("Database Objects Found:")
+            querySnapshot.forEach((doc) => {
+                console.log(doc.id, " => ", doc.data());
+                products.current.push({
+                    ...doc.data(),
+                    id: doc.id
                 });
-                setState(products.current);
-                productsStatic.current = products.current;
-                productsDynamic.current = products.current;
-            })
+            });
+            setState(products.current);
+            productsStatic.current = products.current;
+            productsDynamic.current = products.current;
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [props.type]);
 
     useEffect(() => {
 
@@ -133,29 +128,19 @@ const Resultspage = () => {
                 </select>
                 <button className="resetButton" onClick={() => setReset(!isReset)}>Reset All Filters</button>
             </div>
-            <div>
-                {!state.length ? (
-                    <div className="noResultsDiv">
-                        <p>No Products Could Be Found:</p>
-                        <p>Please Refine Your Search And Filter Criteria.</p>
-                    </div>
-                ) : (
-                    <div className="productGridContainer">
-                        {state.map((obj) => (
-                            <ProductItem
-                                key={obj.id}
-                                id={obj.id}
-                                productName={obj.name}
-                                price={obj.price1}
-                                footprint={obj.co2footprint}
-                            />
-                        ))}
-                    </div>
-                )}
+            <div className="productGridContainer">
+                {state.map((obj) => (
+                    <ProductItem
+                        key={obj.id}
+                        id={obj.id}
+                        productName={obj.name}
+                        price={obj.price1}
+                        footprint={obj.co2footprint}
+                    />
+                ))}
             </div>
         </div>
     );
 }
 
-
-export default Resultspage;
+export default Productspage;

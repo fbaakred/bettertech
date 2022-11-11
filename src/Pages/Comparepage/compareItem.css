@@ -1,13 +1,12 @@
 .compareItem {
   flex: 1;
   text-align: center;
-  background-color: rgb(240, 240, 240);
-  margin: 5px;
-  border-radius: 5px;
 }
 
 .compareItem > div {
-  margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-bottom: 1px solid lightgrey;
 }
 
 .compareItem > img {
