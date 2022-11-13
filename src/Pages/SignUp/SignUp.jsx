@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { auth } from "../../firebase";
+import { Link, useNavigate } from "react-router-dom";
+import { auth, db } from "../../firebase";
 import "./signup.css";
 import { Form } from "react-bootstrap";
-import { getDatabase, ref, set } from "firebase/database";
+import { setDoc, doc } from "firebase/firestore";
 
 /**
  * Component for adding new user to database
@@ -16,6 +16,7 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
     const [displayName, setDisplayName] = useState("");
     const [error, setError] = useState(null);
+    let navigate = useNavigate();
 
     const createUserWithEmailAndPasswordHandler = async (
         event,
@@ -27,16 +28,13 @@ const SignUp = () => {
         try {
             const signUp = await auth
                 .createUserWithEmailAndPassword(email, password);
+            console.log(signUp)
             const uid = signUp.user.uid;
-
-            const db = getDatabase();
-            await set(ref(db, 'Users/' + uid), {
+            await setDoc(doc(db, "users", uid),{
                 email: email,
                 displayName: displayName,
-                height: 0,
-            });
-
-            window.location = "/profile";
+            })
+            navigate("/profile");
         } catch (errorMessage) {
             console.log(errorMessage);
             setError("Error signing up with e-mail and password");

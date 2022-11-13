@@ -8,10 +8,16 @@ import Footer from "./Components/Footer";
 import ProfilePage from "./Pages/ProfilePage";
 import Productspage from "./Pages/Productpages/Productspage";
 import Resultspage from "./Pages/Productpages/Resultspage";
+import PageNotFound from "./Pages/PageNotFound";
 import "./websiteTheme.css";
 import { RecoilRoot } from "recoil";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./firebase";
 
 const App = () => {
+
+  const [user] = useAuthState(auth);
+
   return (
     <RecoilRoot>
       <div className="container">
@@ -22,11 +28,12 @@ const App = () => {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/compare" element={<Comparepage />} />
-            <Route path="/profile" element={<ProfilePage />} />
+            {user && <Route path="/profile" element={<ProfilePage />} />}
             <Route path="/laptops" element={<Productspage type="laptops" />} />
             <Route path="/smartphones" element={<Productspage type="smartphones"/>} />
             <Route path="/computers" element={<Productspage type="computers"/>} />
             <Route path="/results" element={<Resultspage />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
           <Footer />
         </div>
