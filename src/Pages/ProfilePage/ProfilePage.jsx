@@ -1,37 +1,20 @@
-import { React, useEffect, useState } from "react";
-import { db , auth } from "../../firebase";
-import { onAuthStateChanged  } from "firebase/auth";
-import { getDoc, doc } from "firebase/firestore";
+import { React } from "react";
+import { auth } from "../../firebase";
 import "./profilepage.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 
 const ProfilePage = () => {
   
-  const [profileData, setProfileData] = useState("");
-  
   const logOut = () => {
     auth.signOut();
-    window.location = "/";
   }
 
-  useEffect(() => {
-    const getUserData = async (uid) => {
-      const docRef = await doc(db, "users", uid);
-      const profileDataDoc = await getDoc(docRef);
-      setProfileData(profileDataDoc.data());
-    };
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const uid = user.uid;
-        getUserData(uid);
-        console.log("Authenticated User")
-      } else {
-        console.log("Not Authenticated")
-      }
-    });
-  }, []);
+  const [user] = useAuthState(auth);
 
   return (
-    <div className="page-content page-container" id="page-content">
+    <div className="page-content page-container" id="page-content"> 
+    {user &&
       <div className="padding">
         <div className="row container d-flex justify-content-center">
           <div className="col-xl-6 col-md-12">
@@ -40,9 +23,9 @@ const ProfilePage = () => {
                 <div className="col-sm-4 bg-c-lite-green user-profile">
                   <div className="card-block text-center text-white">
                     <div className="m-b-25">
-                      <img src="https://img.icons8.com/bubbles/100/000000/user.png" className="img-radius" alt="User-Profile-Image" />
+                      <img src="https://img.icons8.com/bubbles/100/000000/user.png" className="img-radius" alt="User-Profile" />
                     </div>
-                    <h6 className="f-w-600">{profileData.displayName}</h6>
+                    <h6 className="f-w-600">{user.displayName}</h6>
                     <p>Tech Guy</p>
                     <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                   </div>
@@ -53,7 +36,7 @@ const ProfilePage = () => {
                     <div className="row">
                       <div className="col-sm-6">
                         <p className="m-b-10 f-w-600">Email</p>
-                        <h6 className="text-muted f-w-400">{profileData.email}</h6>
+                        <h6 className="text-muted f-w-400">{user.email}</h6>
                       </div>
                       <div className="col-sm-6">
                         <p className="m-b-10 f-w-600">Phone</p>
@@ -67,12 +50,15 @@ const ProfilePage = () => {
                   </div>
                 </div>
                 <button className = "btn-bottom" onClick={logOut}>Change Profile Data</button>
-                <button className = "btn-bottom" onClick={logOut}>Sign out</button>
+                <Link to="/">
+                  <button className = "btn-bottom" onClick={logOut}>Sign out</button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> 
+      }
     </div>
   )
 }
