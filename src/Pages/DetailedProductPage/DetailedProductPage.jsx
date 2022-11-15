@@ -17,6 +17,7 @@ const DetailedProductPage = (props) => {
       console.log(doc.data())
       setProduct({...doc.data(), id: doc.id});
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
