@@ -29,7 +29,7 @@ const Comparepage = () => {
                 <TabPanel>
                     <div className="compareView">
                         <div className="rowNames">
-                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Brand</div>
+                            <div style={{ paddingTop: "1.1em", paddingBottom: "0.5em" }}>Brand</div>
                             <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Product Type</div>
                             <div style={{ paddingTop: "3.8em", paddingBottom: "3.8em" }}>CO2 Score</div>
                             <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>CO2 Footprint</div>
@@ -47,7 +47,7 @@ const Comparepage = () => {
                 <TabPanel>
                     <div className="compareView">
                         <div className="rowNames">
-                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Average Lifetime</div>
+                            <div style={{ paddingTop: "1.1em", paddingBottom: "0.5em" }}>Average Lifetime</div>
                             <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Energy Efficiency (TEC)</div>
                             <div style={{ paddingTop: "0.7em", paddingBottom: "0.5em" }}>To Put It In A Nutshell:</div>
                         </div>
