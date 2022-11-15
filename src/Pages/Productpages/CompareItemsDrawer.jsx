@@ -42,7 +42,7 @@ const CompareItemsDrawer = () => {
       <></>
       :
       <div>
-        <div style={{ height: "140px" }}></div>
+        <div style={{ height: "150px" }}></div>
         <div className="drawerOpen">
           <div className='drawerContent'>
             {selectedItems.map((item, key) => (

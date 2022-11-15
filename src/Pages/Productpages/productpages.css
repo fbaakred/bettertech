@@ -109,9 +109,9 @@ CompareItemsDrawer
 */
 
 .drawerOpen {
-  width: 98.2%;
-  margin-right: 0.9%;
-  margin-left: 0.9%;
+  width: 99%;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
   margin-bottom: 3rem;
   display: flex;
   align-items: center;
