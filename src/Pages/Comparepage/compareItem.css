@@ -9,11 +9,11 @@
   align-items: center;
 }
 
-.compareItem > div {
+.compareItem>div {
   margin-bottom: 20px;
 }
 
-.compareItem > img {
+.compareItem>img {
   height: 200px;
   width: 200px;
   object-fit: contain;
@@ -22,4 +22,10 @@
 .generalStats {
   display: flex;
   flex-direction: column;
+}
+
+.diagramIMG {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }

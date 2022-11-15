@@ -9,6 +9,7 @@ import { getBackgroundColor } from "../../utils";
 const CompareItem = (props) => {
 
   const [imgURL, setImgUrl] = useState('');
+  const [diagramURL, setDiagramUrl] = useState('');
   const product = props.product;
 
   useEffect(() => {
@@ -17,6 +18,14 @@ const CompareItem = (props) => {
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    getDownloadURL(ref(storage, product.id + '_Diagram.jpg')).then((url) => {
+      setDiagramUrl(url);
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   return (
     <div className="compareItem" style={{ backgroundColor: getBackgroundColor(product.co2score) }}>
@@ -34,10 +43,10 @@ const CompareItem = (props) => {
       }
 
       {props.tab === "psustainability" &&
-        <div>
+        <div style={{ marginBottom: "0" }}>
           <div style={{ padding: "0.4em" }}> {product.lifetime} </div>
           <div style={{ padding: "0.5em" }}> {product.tec} kWh </div>
-          <div>
+          <div style={{ paddingBottom: "3em" }}>
             <p >This product has a CO2 footprint approx. equivalent to driving</p>
             <h4 style={{ margin: "-0.5em" }}>{product.co2equi1} miles</h4>
             <p style={{ paddingBottom: "1em" }}>in a passenger car.</p>
@@ -49,6 +58,7 @@ const CompareItem = (props) => {
             <p>100 of these products have a CO2 footprint about the same as the annual average carbon footprint of</p>
             <h4 style={{ margin: "-0.5em" }}>{product.co2equi3} people.</h4>
           </div>
+          <img src={diagramURL} alt="productphoto" className="diagramIMG" />
         </div>
       }
 
