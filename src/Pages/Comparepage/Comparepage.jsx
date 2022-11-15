@@ -29,11 +29,11 @@ const Comparepage = () => {
                 <TabPanel>
                     <div className="compareView">
                         <div className="rowNames">
-                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Brand</div>
+                            <div style={{ paddingTop: "1.2em", paddingBottom: "0.5em" }}>Brand</div>
                             <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Product Type</div>
-                            <div style={{ paddingTop: "3.8em", paddingBottom: "3.8em" }}>CO2 Score</div>
+                            <div style={{ paddingTop: "3.7em", paddingBottom: "3.7em" }}>CO2 Score</div>
                             <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>CO2 Footprint</div>
-                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Price</div>
+                            <div style={{ paddingTop: "0.3em", paddingBottom: "0.5em" }}>Price</div>
                         </div>
                         {selectedItems.map((obj, key) => (
                             <CompareItem
@@ -47,9 +47,9 @@ const Comparepage = () => {
                 <TabPanel>
                     <div className="compareView">
                         <div className="rowNames">
-                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Average Lifetime</div>
-                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Energy Efficiency (TEC)</div>
-                            <div style={{ paddingTop: "0.7em", paddingBottom: "0.5em" }}>To Put It In A Nutshell:</div>
+                            <div style={{ paddingTop: "1em", paddingBottom: "0.5em" }}>Average Lifetime</div>
+                            <div style={{ paddingTop: "0.4em", paddingBottom: "0.5em" }}>Energy Efficiency (TEC)</div>
+                            <div style={{ paddingTop: "0.9em", paddingBottom: "0.5em" }}>To Put It In A Nutshell:</div>
                         </div>
                         {selectedItems.map((obj, key) => (
                             <CompareItem
