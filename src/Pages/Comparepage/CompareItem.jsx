@@ -20,7 +20,7 @@ const CompareItem = (props) => {
   }, []);
 
   useEffect(() => {
-    getDownloadURL(ref(storage, product.id + '_Diagram.jpg')).then((url) => {
+    getDownloadURL(ref(storage, product.id + '_Diagram.png')).then((url) => {
       setDiagramUrl(url);
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
