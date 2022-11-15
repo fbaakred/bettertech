@@ -115,12 +115,13 @@ CompareItemsDrawer
   margin-bottom: 3rem;
   display: flex;
   align-items: center;
-  background-color: lightgrey;
+  background-color: #E6E6E6;
   bottom: 0;
   position: fixed;
   z-index: 3;
-  box-shadow: 2px 2px 2px 2px rgb(143, 143, 143);
+  box-shadow: 1px 1px 1px 1px rgb(143, 143, 143);
   border-radius: 10px;
+  border: 1px solid darkgrey;
 }
 
 .drawerContent {

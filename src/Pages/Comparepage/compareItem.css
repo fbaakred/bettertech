@@ -2,6 +2,7 @@
   flex: 1;
   text-align: center;
   margin: 5px;
+  padding: 0.5em;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -16,4 +17,9 @@
   height: 200px;
   width: 200px;
   object-fit: contain;
+}
+
+.generalStats {
+  display: flex;
+  flex-direction: column;
 }

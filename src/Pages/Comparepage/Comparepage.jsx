@@ -1,41 +1,104 @@
 import React from "react";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { useRecoilValue } from "recoil";
+import itemsToCompare from "../../Recoil/Atoms/itemsToCompare";
+import { Back } from "iconsax-react";
+import { Link } from "react-router-dom";
 import CompareItem from "./CompareItem";
 import "./comparepage.css";
-import itemsToCompare from "../../Recoil/Atoms/itemsToCompare";
-import showTechSpecs from "../../Recoil/Atoms/showTechSpecs";
-import { ArrowDown2, ArrowUp2, Back } from "iconsax-react";
-import { Link } from "react-router-dom";
 
-const Comparepage = () => {  
+const Comparepage = () => {
 
-  const selectedItems = useRecoilValue(itemsToCompare);
-  const [showSpecs, setShowSpecs] = useRecoilState(showTechSpecs);
-  
-  return(
-    <div className="comparePage">
-      <div className="topOfPage">
-        <Link to="/laptops">
-          <Back size={60}/>
-        </Link>
-        <div className="compareHeadline"> Compare </div>
-      </div>
-      <div className="compareView">
-        {selectedItems.map((obj, key) => (
-          <CompareItem 
-            key={key}
-            product={obj}
-          /> 
-        ))}
-      </div>
-      <div className="techButtonDiv">
-        <button className="techButton" onClick={() => setShowSpecs(!showSpecs)}> 
-          {showSpecs ? <ArrowUp2 /> : <ArrowDown2 />}
-          {showSpecs ? "Hide Tech Specs" : "Show Tech Specs"} 
-        </button>
-      </div>
-    </div>
-  );
+    const selectedItems = useRecoilValue(itemsToCompare);
+
+    return (
+        <div className="comparePage">
+            <div className="topOfPage">
+                <Link to="/laptops">
+                    <Back size={40} style={{ paddingLeft: "0.5em", paddingTop: "0.3em" }} />
+                </Link>
+                <div className="compareHeadline"> Compare Products </div>
+            </div>
+            <Tabs className="Tabs">
+                <TabList>
+                    <Tab> General Information </Tab>
+                    <Tab> Product Sustainability </Tab>
+                    <Tab> Brand Sustainability </Tab>
+                    <Tab> Technical Details </Tab>
+                </TabList>
+                <TabPanel>
+                    <div className="compareView">
+                        <div className="rowNames">
+                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Brand</div>
+                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Product Type</div>
+                            <div style={{ paddingTop: "3.8em", paddingBottom: "3.8em" }}>CO2 Score</div>
+                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>CO2 Footprint</div>
+                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Price</div>
+                        </div>
+                        {selectedItems.map((obj, key) => (
+                            <CompareItem
+                                key={key}
+                                product={obj}
+                                tab="general"
+                            />
+                        ))}
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="compareView">
+                        <div className="rowNames">
+                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Average Lifetime</div>
+                            <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Energy Efficiency (TEC)</div>
+                            <div style={{ paddingTop: "0.7em", paddingBottom: "0.5em" }}>To Put It In A Nutshell:</div>
+                        </div>
+                        {selectedItems.map((obj, key) => (
+                            <CompareItem
+                                key={key}
+                                product={obj}
+                                tab="psustainability"
+                            />
+                        ))}
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="compareView">
+                        <div className="rowNames">
+                            <div style={{ paddingTop: "40px"}}>Products</div>
+                            <div style={{ paddingTop: "360px"}}>Packaging</div>
+                            <div style={{ paddingTop: "280px"}}>Energy</div>
+                            <div style={{ paddingTop: "330px"}}>CO2 Offsetting</div>
+                        </div>
+                        {selectedItems.map((obj, key) => (
+                            <CompareItem
+                                key={key}
+                                product={obj}
+                                tab="bsustainability"
+                            />
+                        ))}
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="compareView">
+                    <div className="rowNames">
+                            <div style={{ paddingTop: "2.4em" }}>Display Resolution</div>
+                            <div style={{ paddingTop: "2.1em" }}>Display Size</div>
+                            <div style={{ paddingTop: "2em" }}>CPU</div>
+                            <div style={{ paddingTop: "2em" }}>RAM</div>
+                            <div style={{ paddingTop: "2em" }}>SSD</div>
+                            <div style={{ paddingTop: "2em" }}>Operating System</div>
+                        </div>
+                        {selectedItems.map((obj, key) => (
+                            <CompareItem
+                                key={key}
+                                product={obj}
+                                tab="technical"
+                            />
+                        ))}
+                    </div>
+                </TabPanel>
+            </Tabs>
+        </div>
+    );
 }
 
 export default Comparepage;

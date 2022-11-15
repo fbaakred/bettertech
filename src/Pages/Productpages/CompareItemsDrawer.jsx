@@ -30,7 +30,7 @@ const DrawerItem = (props) => {
     <div className="drawerItem" style={{ borderColor: getBackgroundColor(product.co2score) }}>
       <button className="drawerItemButton" onClick={removeItem}> <Trash /> </button>
       <img src={imgURL} alt="productphoto" height={"100px"} width={"140px"} />
-      <div> {product.name} </div>
+      <div style={{ paddingTop: "0.3em"}}> {product.name} </div>
     </div>
   );
 }
@@ -42,7 +42,7 @@ const CompareItemsDrawer = () => {
       <></>
       :
       <div>
-        <div style={{ height: "135px" }}></div>
+        <div style={{ height: "140px" }}></div>
         <div className="drawerOpen">
           <div className='drawerContent'>
             {selectedItems.map((item, key) => (
