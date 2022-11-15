@@ -30,7 +30,13 @@
   object-position: center;
 }
 
-.productGridItem>img {
+.productInfo:hover {
+  border: 2px solid black;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.productInfo>img {
   max-width: 22vw;
   max-height: 15vw;
   padding-bottom: 1em;

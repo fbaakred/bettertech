@@ -13,6 +13,7 @@ import "./websiteTheme.css";
 import { RecoilRoot } from "recoil";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase";
+import DetailedProductPage from "./Pages/DetailedProductPage/DetailedProductPage";
 
 const App = () => {
 
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/compare" element={<Comparepage />} />
             {user && <Route path="/profile" element={<ProfilePage />} />}
             <Route path="/laptops" element={<Productspage type="laptops" />} />
+            <Route path="/laptops/:productId" element={<DetailedProductPage type="laptops"/>}></Route>
             <Route path="/smartphones" element={<Productspage type="smartphones"/>} />
             <Route path="/computers" element={<Productspage type="computers"/>} />
             <Route path="/results" element={<Resultspage />} />
