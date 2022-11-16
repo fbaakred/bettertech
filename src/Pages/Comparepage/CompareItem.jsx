@@ -3,7 +3,7 @@ import "./compareItem.css";
 import { storage } from "../../firebase";
 import { getDownloadURL, ref } from "firebase/storage";
 import { getCo2ScoreIcon } from "../../Icons/Co2Scores";
-import { getBackgroundColor } from "../../utils";
+import { getBackgroundColor, getPurchaseLink } from "../../utils";
 
 
 const CompareItem = (props) => {
@@ -26,6 +26,10 @@ const CompareItem = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const buyNow = () => {
+    window.location.href = getPurchaseLink(product.id);
+  }
+
 
   return (
     <div className="compareItem" style={{ backgroundColor: getBackgroundColor(product.co2score) }}>
@@ -39,6 +43,7 @@ const CompareItem = (props) => {
           {getCo2ScoreIcon(product.co2score)}
           <div style={{ padding: "0.5em" }}> {product.co2footprint} Kg </div>
           <div style={{ padding: "0.5em" }}> {product.price1} € </div>
+          <button onClick={buyNow}> Buy now </button>
         </div>
       }
 
