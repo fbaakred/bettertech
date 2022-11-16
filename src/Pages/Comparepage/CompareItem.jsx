@@ -46,7 +46,7 @@ const CompareItem = (props) => {
           {getCo2ScoreIcon(product.co2score)}
           <div style={{ padding: "0.5em" }}> {product.co2footprint} Kg </div>
           <div style={{ padding: "0.5em" }}> {product.price1} € </div>
-          <button onClick={buyNow}> Buy now </button>
+          <button className={"buyNowButton"} onClick={buyNow}> Buy now </button>
         </div>
       }
 
