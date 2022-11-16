@@ -5,49 +5,89 @@
 .topOfPage {
   display: flex;
   align-items: center;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  justify-content: center;
 }
 
 .comparePage {
   display: flex;
   flex-direction: column;
+  background-color: rgb(245, 245, 245);
 }
 
 .compareHeadline {
   text-align: center;
-  padding: 0.4em;
-  font-size: 60px;
-  margin-left: 400px;
+  padding: 0.5em;
+  font-size: 24px;
+  padding-right: 2em;
 }
 
-.statsToCompare {
-  padding-top: 210px;
-  margin-left: 4em;
-  margin-right: 4em;
+.rowNames {
+  background: lightgrey;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 1em;
+  padding-top: 242px;
   display: flex;
   flex-direction: column;
+  font-weight: bold;
 }
 
-.statDiv {
-  margin-bottom: 20px;
-}
+/* Tab Styling */
 
-.techButton {
-  margin-bottom: 10px;
-  height: 10vh;
-  width: 30vw;
-  background-color: white;
-  border: 2px solid #0fa95770;
-  border-radius: 10px;
+.Tabs {
+  height: auto;
+  margin: 0.5em;
+  background: #FFFFFF;
+  padding: 1rem;
+  color: #000000;
+  border-radius: 20px;
+}
+ 
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+ 
+.react-tabs__tab-list {
+  width: 75%;
+  margin: 0 auto 1rem;
   display: flex;
   align-items: center;
-  font-size: larger;
-  justify-content: center;
+  justify-content: space-between;
+  border: 1px solid #000000;
+  border-radius: 2rem;
+  padding-left: 0px;
 }
-
-.techButton:hover {
-  background-color: #0fa95770;
+ 
+.react-tabs__tab {
+  width: 50%;
+  padding: 1rem;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
 }
-
-.techButtonDiv {
-  align-self: center;
+ 
+.react-tabs__tab--selected {
+  background: #0FA958;
 }
+ 
+.react-tabs__tab--disabled {
+  cursor: default;
+}
+ 
+.react-tabs__tab:hover {
+  background: rgba(15, 169, 88, 0.25);
+}
+ 
+.react-tabs__tab:first-child {
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+ 
+.react-tabs__tab:last-child {
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+ 

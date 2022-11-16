@@ -28,8 +28,6 @@ export const ProductItem = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    console.log(product)
-
     return (
         <div className="itemContainer">
             <div className="productGridItem" style={{backgroundColor: getBackgroundColor(product.co2score)}}>
@@ -38,7 +36,7 @@ export const ProductItem = (props) => {
                         <img src={imgURL} alt="productphoto" />
                         <div className="boldProduct"> {product.name} </div>
                         {getCo2ScoreIcon(product.co2score)}
-                        <div> {product.price1} € </div>
+                        <div style={{ paddingBottom: "0.5em", fontWeight: "bold" }}> {product.price1} € </div>
                     </div>
                 </Link>
                 <div>
