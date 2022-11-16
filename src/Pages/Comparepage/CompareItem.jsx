@@ -36,7 +36,7 @@ const CompareItem = (props) => {
       <img src={imgURL} alt="productphoto" />
       <div style={{ fontWeight: "bold" }}> {product.name} </div>
 
-      {props.tab === "general" &&
+      {props.tab.includes("general") &&
         <div>
           <div style={{ padding: "0.5em" }}> {product.brand} </div>
           <div style={{ padding: "0.5em" }}> {product.producttype} </div>
@@ -47,7 +47,7 @@ const CompareItem = (props) => {
         </div>
       }
 
-      {props.tab === "psustainability" &&
+      {props.tab.includes("psustainability") &&
         <div style={{ marginBottom: "0" }}>
           <div style={{ padding: "0.4em" }}> {product.lifetime} </div>
           <div style={{ padding: "0.5em" }}> {product.tec} kWh </div>
@@ -67,7 +67,7 @@ const CompareItem = (props) => {
         </div>
       }
 
-      {props.tab === "bsustainability" &&
+      {props.tab.includes("bsustainability") &&
         <div className="brandTextContainer">
           <div style={{ paddingTop: "2em", height: "350px" }}>
             {product.sustproducts}
@@ -84,7 +84,7 @@ const CompareItem = (props) => {
         </div>
       }
 
-      {props.tab === "technical" &&
+      {props.tab.includes("technical") &&
         <div>
           <div style={{ paddingTop: "2em" }}> {product.displayres} px </div>
           <div style={{ paddingTop: "2em" }}> {product.displayinch} inch </div>

@@ -23,7 +23,7 @@ const DetailedProductPage = (props) => {
   return (
     product &&
     <div>
-      <CompareItem product={product}/>
+      <CompareItem product={product} tab={["general", "psustainability", "bsustainability", "technical"]}/>
     </div>
   );
 }

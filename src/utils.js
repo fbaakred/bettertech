@@ -62,5 +62,7 @@ export const getPurchaseLink = (id) => {
       return "https://www.refurbed.de/p/dell-precision-7730-i7-8850h/?co=de&utm_cluster=gradeA&utm_group=dell-precision-7730-i7-8850h&gclid=4e940a59ee7b19eefb92693a9103b632&gclsrc=3p.ds&&utm_source=bing&msclkid=4e940a59ee7b19eefb92693a9103b632&utm_source=bing&utm_medium=cpc&utm_campaign=DE%20-%20Bing%20Smart%20Shopping&utm_term=4574930452090941&utm_content=Ad%20group%20%231"
     case "ThinkPad L14 Gen 2":
       return "https://www.conrad.de/de/p/lenovo-notebook-thinkpad-l14-gen-2-20x1-35-6-cm-14-zoll-full-hd-intel-core-i5-i5-1135g7-8-gb-ram-256-gb-ssd-intel-2561874.html?hk=SEM&+B%C3%BCro=&+B%C3%BCro=&ef_id=b6e1b3a206341ba5202cd0cadc35ed40%3AG%3As&s_kwcid=AL%21222%2110%2172568048608233%214576167417233514&msclkid=b6e1b3a206341ba5202cd0cadc35ed40&utm_source=bing&utm_medium=cpc&utm_campaign=Computer+%26+B%C3%BCro&utm_term=4576167417233514&utm_content=Computer+%26+B%C3%BCro"
+    default:
+      return "/"
   }
 }
