@@ -33,9 +33,12 @@ const CompareItem = (props) => {
 
   return (
     <div className="compareItem" style={{ backgroundColor: getBackgroundColor(product.co2score) }}>
-      <img src={imgURL} alt="productphoto" />
-      <div style={{ fontWeight: "bold" }}> {product.name} </div>
-
+      {!props.hidePhoto &&
+        <div>
+          <img src={imgURL} alt="productphoto" style={{height: "200px", width: "200px", objectFit: "contain"}}/>
+          <div style={{ fontWeight: "bold" }}> {product.name} </div>
+        </div>
+      }
       {props.tab.includes("general") &&
         <div>
           <div style={{ padding: "0.5em" }}> {product.brand} </div>

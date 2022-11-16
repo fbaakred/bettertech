@@ -13,12 +13,6 @@
   margin-bottom: 20px;
 }
 
-.compareItem>img {
-  height: 200px;
-  width: 200px;
-  object-fit: contain;
-}
-
 .generalStats {
   display: flex;
   flex-direction: column;
@@ -26,6 +20,7 @@
 
 .diagramIMG {
   width: 100%;
-  height: auto;
+  height: 40vh;
   border-radius: 10px;
+  object-fit: contain;
 }

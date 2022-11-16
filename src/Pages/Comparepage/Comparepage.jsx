@@ -80,7 +80,7 @@ const Comparepage = () => {
                 </TabPanel>
                 <TabPanel>
                     <div className="compareView">
-                    <div className="rowNames">
+                        <div className="rowNames">
                             <div style={{ paddingTop: "2.4em" }}>Display Resolution</div>
                             <div style={{ paddingTop: "2.1em" }}>Display Size</div>
                             <div style={{ paddingTop: "2em" }}>CPU</div>
