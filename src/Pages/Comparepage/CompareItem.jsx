@@ -27,7 +27,7 @@ const CompareItem = (props) => {
   }, []);
 
   const buyNow = () => {
-    window.location.href = getPurchaseLink(product.id);
+    window.open(getPurchaseLink(product.id), "_blank");
   }
 
 
@@ -69,24 +69,7 @@ const CompareItem = (props) => {
           <img src={diagramURL} alt="productphoto" className="diagramIMG" />
         </div>
       }
-
-      {props.tab.includes("bsustainability") &&
-        <div className="brandTextContainer">
-          <div style={{ paddingTop: "2em", height: "350px" }}>
-            {product.sustproducts}
-          </div>
-          <div style={{ paddingTop: "2em", height: "270px" }}>
-            {product.packaging}
-          </div>
-          <div style={{ paddingTop: "2em", height: "320px" }}>
-            {product.energy}
-          </div>
-          <div style={{ paddingTop: "2em", height: "240px" }}>
-            {product.co2offset}
-          </div>
-        </div>
-      }
-
+      
       {props.tab.includes("technical") &&
         <div>
           <div style={{ paddingTop: "2em" }}> {product.displayres} px </div>
