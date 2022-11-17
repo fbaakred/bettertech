@@ -33,6 +33,7 @@
   flex-direction: column;
   font-weight: bold;
   min-width: 170px;
+  max-width: 170px;
 }
 
 /* Tab Styling */
