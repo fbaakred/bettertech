@@ -23,7 +23,6 @@ const Comparepage = () => {
                 <TabList>
                     <Tab> General Information </Tab>
                     <Tab> Product Sustainability </Tab>
-                    <Tab> Brand Sustainability </Tab>
                     <Tab> Technical Details </Tab>
                 </TabList>
                 <TabPanel>
@@ -64,23 +63,6 @@ const Comparepage = () => {
                 <TabPanel>
                     <div className="compareView">
                         <div className="rowNames">
-                            <div style={{ paddingTop: "40px"}}>Products</div>
-                            <div style={{ paddingTop: "360px"}}>Packaging</div>
-                            <div style={{ paddingTop: "280px"}}>Energy</div>
-                            <div style={{ paddingTop: "330px"}}>CO2 Offsetting</div>
-                        </div>
-                        {selectedItems.map((obj, key) => (
-                            <CompareItem
-                                key={key}
-                                product={obj}
-                                tab="bsustainability"
-                            />
-                        ))}
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <div className="compareView">
-                    <div className="rowNames">
                             <div style={{ paddingTop: "2.4em" }}>Display Resolution</div>
                             <div style={{ paddingTop: "2.1em" }}>Display Size</div>
                             <div style={{ paddingTop: "2em" }}>CPU</div>
