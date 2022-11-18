@@ -5,6 +5,7 @@ import Comparepage from "./Pages/Comparepage";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import Footer from "./Components/Footer";
+import ChangeProfilePage from "./Pages/ChangeProfilePage";
 import ProfilePage from "./Pages/ProfilePage";
 import Productspage from "./Pages/Productpages/Productspage";
 import Resultspage from "./Pages/Productpages/Resultspage";
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/compare" element={<Comparepage />} />
             {user && <Route path="/profile" element={<ProfilePage />} />}
+            {user && <Route path="/profile/change" element={<ChangeProfilePage />} />}
             <Route path="/laptops" element={<Productspage type="laptops" />} />
             <Route path="/laptops/:productId" element={<DetailedProductPage type="laptops"/>}></Route>
             <Route path="/smartphones" element={<Productspage type="smartphones"/>} />
