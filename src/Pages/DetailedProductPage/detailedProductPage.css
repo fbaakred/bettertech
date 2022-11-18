@@ -18,3 +18,9 @@
   display: flex;
   grid-template-columns: 1fr 2fr;
 }
+
+.infoView {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
