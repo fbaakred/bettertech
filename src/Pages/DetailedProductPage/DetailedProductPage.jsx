@@ -6,6 +6,7 @@ import CompareItem from "../Comparepage/CompareItem";
 import { useEffect } from "react";
 import "../Comparepage/comparepage.css";
 import "./detailedProductPage.css";
+import LightBulb from "../../Components/LightBulb";
 
 const DetailedProductPage = (props) => {
 
@@ -25,7 +26,7 @@ const DetailedProductPage = (props) => {
   return (
     product &&
     <div>
-      <div className="compareView">
+      <div className="infoView">
         <div className="rowNames">
           <div style={{ paddingTop: "1.1em", paddingBottom: "0.5em" }}>Brand</div>
           <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Product Type</div>
@@ -33,10 +34,10 @@ const DetailedProductPage = (props) => {
           <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>CO2 Footprint</div>
           <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Price</div>
         </div>
-        <CompareItem product={product} tab={"general"} />
+        <CompareItem product={product} tab="general" />
       </div>
       <div className="subHeader"> Product Sustainability </div>
-      <div className="compareView">
+      <div className="infoView">
         <div className="rowNames" style={{paddingTop: "0px"}}>
           <div style={{ paddingTop: "1.1em", paddingBottom: "0.5em" }}>Average Lifetime</div>
           <div style={{ paddingTop: "0.3em", paddingBottom: "0.5em" }}>Energy Efficiency (TEC)</div>
@@ -46,7 +47,7 @@ const DetailedProductPage = (props) => {
         <CompareItem product={product} tab="psustainability" hidePhoto={true}/>
       </div>
       <div className="subHeader"> Technical Details </div>
-      <div className="compareView">
+      <div className="infoView">
         <div className="rowNames"  style={{paddingTop: "2px"}}>
             <div style={{ paddingTop: "2.4em" }}>Display Resolution</div>
             <div style={{ paddingTop: "2.1em" }}>Display Size</div>
@@ -58,7 +59,8 @@ const DetailedProductPage = (props) => {
         <CompareItem product={product} tab="technical" hidePhoto={true}/>
       </div>
       <div className="subHeader"> Brand Sustainability </div>
-      <div className="compareView">
+      <div className="brandInfo">
+        <LightBulb width={319} height={476}/>
         <div className="brandTextContainer">
           <div>
             {product.sustproducts}
