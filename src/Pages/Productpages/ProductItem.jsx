@@ -33,9 +33,13 @@ export const ProductItem = (props) => {
             <div className="productGridItem" style={{backgroundColor: getBackgroundColor(product.co2score)}}>
                 <Link to={product.name.replace(/ /g, "_")}>
                     <div className="productInfo">
+                        <div className="co2ScoreIcon">{getCo2ScoreIcon(product.co2score, "80", "80")}</div>
                         <img src={imgURL} alt="productphoto" />
                         <div className="boldProduct"> {product.name} </div>
-                        {getCo2ScoreIcon(product.co2score)}
+                        <div className="productText">
+                            {product.name} ({product.displaycm}cm / {product.displayinch}"), {product.cpu},
+                            {product.ssd}GB SSD
+                        </div>
                         <div style={{ paddingBottom: "0.5em", fontWeight: "bold" }}> {product.price1} € </div>
                     </div>
                 </Link>
