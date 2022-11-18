@@ -6,6 +6,7 @@ import CompareItem from "../Comparepage/CompareItem";
 import { useEffect } from "react";
 import "../Comparepage/comparepage.css";
 import "./detailedProductPage.css";
+import LightBulb from "../../Components/LightBulb";
 
 const DetailedProductPage = (props) => {
 
@@ -58,7 +59,8 @@ const DetailedProductPage = (props) => {
         <CompareItem product={product} tab="technical" hidePhoto={true}/>
       </div>
       <div className="subHeader"> Brand Sustainability </div>
-      <div className="compareView">
+      <div className="brandInfo">
+        <LightBulb width={319} height={476}/>
         <div className="brandTextContainer">
           <div>
             {product.sustproducts}

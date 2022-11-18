@@ -39,8 +39,8 @@ const CompareItem = (props) => {
           <div style={{ fontWeight: "bold" }}> {product.name} </div>
         </div>
       }
-      {props.tab.includes("general") &&
-        <div>
+      {props.tab === "general" &&
+        <div style={{width: "70%"}}>
           <div style={{ padding: "0.5em" }}> {product.brand} </div>
           <div style={{ padding: "0.5em" }}> {product.producttype} </div>
           {getCo2ScoreIcon(product.co2score)}
@@ -50,7 +50,7 @@ const CompareItem = (props) => {
         </div>
       }
 
-      {props.tab.includes("psustainability") &&
+      {props.tab === "psustainability" &&
         <div style={{ marginBottom: "0" }}>
           <div style={{ padding: "0.4em" }}> {product.lifetime} </div>
           <div style={{ padding: "0.5em" }}> {product.tec} kWh </div>
@@ -70,7 +70,7 @@ const CompareItem = (props) => {
         </div>
       }
       
-      {props.tab.includes("technical") &&
+      {props.tab === "technical" &&
         <div>
           <div style={{ paddingTop: "2em" }}> {product.displayres} px </div>
           <div style={{ paddingTop: "2em" }}> {product.displayinch} inch </div>
