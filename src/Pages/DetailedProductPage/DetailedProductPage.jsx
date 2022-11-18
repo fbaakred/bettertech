@@ -4,6 +4,8 @@ import { db } from "../../firebase";
 import { getDoc, doc } from "firebase/firestore";
 import CompareItem from "../Comparepage/CompareItem";
 import { useEffect } from "react";
+import "../Comparepage/comparepage.css";
+import "./detailedProductPage.css";
 
 const DetailedProductPage = (props) => {
 
@@ -23,7 +25,55 @@ const DetailedProductPage = (props) => {
   return (
     product &&
     <div>
-      <CompareItem product={product}/>
+      <div className="compareView">
+        <div className="rowNames">
+          <div style={{ paddingTop: "1.1em", paddingBottom: "0.5em" }}>Brand</div>
+          <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Product Type</div>
+          <div style={{ paddingTop: "3.8em", paddingBottom: "3.8em" }}>CO2 Score</div>
+          <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>CO2 Footprint</div>
+          <div style={{ paddingTop: "0.5em", paddingBottom: "0.5em" }}>Price</div>
+        </div>
+        <CompareItem product={product} tab={"general"} />
+      </div>
+      <div className="subHeader"> Product Sustainability </div>
+      <div className="compareView">
+        <div className="rowNames" style={{paddingTop: "0px"}}>
+          <div style={{ paddingTop: "1.1em", paddingBottom: "0.5em" }}>Average Lifetime</div>
+          <div style={{ paddingTop: "0.3em", paddingBottom: "0.5em" }}>Energy Efficiency (TEC)</div>
+          <div style={{ paddingTop: "0.6em", paddingBottom: "0.5em" }}>To Put It In A Nutshell</div>
+          <div style={{ paddingTop: "27em"}}>CO2 Breakdown Diagram</div>
+        </div>
+        <CompareItem product={product} tab="psustainability" hidePhoto={true}/>
+      </div>
+      <div className="subHeader"> Technical Details </div>
+      <div className="compareView">
+        <div className="rowNames"  style={{paddingTop: "2px"}}>
+            <div style={{ paddingTop: "2.4em" }}>Display Resolution</div>
+            <div style={{ paddingTop: "2.1em" }}>Display Size</div>
+            <div style={{ paddingTop: "2em" }}>CPU</div>
+            <div style={{ paddingTop: "2em" }}>RAM</div>
+            <div style={{ paddingTop: "2em" }}>SSD</div>
+            <div style={{ paddingTop: "2em" }}>Operating System</div>
+        </div>
+        <CompareItem product={product} tab="technical" hidePhoto={true}/>
+      </div>
+      <div className="subHeader"> Brand Sustainability </div>
+      <div className="compareView">
+        <div className="brandTextContainer">
+          <div>
+            {product.sustproducts}
+          </div>
+          <div>
+            {product.packaging}
+          </div>
+          <div>
+            {product.energy}
+          </div>
+          <div>
+            {product.co2offset}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

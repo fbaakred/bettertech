@@ -3,7 +3,7 @@ import "./compareItem.css";
 import { storage } from "../../firebase";
 import { getDownloadURL, ref } from "firebase/storage";
 import { getCo2ScoreIcon } from "../../Icons/Co2Scores";
-import { getBackgroundColor } from "../../utils";
+import { getBackgroundColor, getPurchaseLink } from "../../utils";
 
 
 const CompareItem = (props) => {
@@ -26,23 +26,31 @@ const CompareItem = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const buyNow = () => {
+    window.open(getPurchaseLink(product.id), "_blank");
+  }
+
 
   return (
     <div className="compareItem" style={{ backgroundColor: getBackgroundColor(product.co2score) }}>
-      <img src={imgURL} alt="productphoto" />
-      <div style={{ fontWeight: "bold" }}> {product.name} </div>
-
-      {props.tab === "general" &&
+      {!props.hidePhoto &&
+        <div>
+          <img src={imgURL} alt="productphoto" style={{height: "200px", width: "200px", objectFit: "contain"}}/>
+          <div style={{ fontWeight: "bold" }}> {product.name} </div>
+        </div>
+      }
+      {props.tab.includes("general") &&
         <div>
           <div style={{ padding: "0.5em" }}> {product.brand} </div>
           <div style={{ padding: "0.5em" }}> {product.producttype} </div>
           {getCo2ScoreIcon(product.co2score)}
           <div style={{ padding: "0.5em" }}> {product.co2footprint} Kg </div>
           <div style={{ padding: "0.5em" }}> {product.price1} € </div>
+          <button className={"buyNowButton"} onClick={buyNow}> Buy now </button>
         </div>
       }
 
-      {props.tab === "psustainability" &&
+      {props.tab.includes("psustainability") &&
         <div style={{ marginBottom: "0" }}>
           <div style={{ padding: "0.4em" }}> {product.lifetime} </div>
           <div style={{ padding: "0.5em" }}> {product.tec} kWh </div>
@@ -61,25 +69,8 @@ const CompareItem = (props) => {
           <img src={diagramURL} alt="productphoto" className="diagramIMG" />
         </div>
       }
-
-      {props.tab === "bsustainability" &&
-        <div className="brandTextContainer">
-          <div style={{ paddingTop: "2em", height: "350px" }}>
-            {product.sustproducts}
-          </div>
-          <div style={{ paddingTop: "2em", height: "270px" }}>
-            {product.packaging}
-          </div>
-          <div style={{ paddingTop: "2em", height: "320px" }}>
-            {product.energy}
-          </div>
-          <div style={{ paddingTop: "2em", height: "240px" }}>
-            {product.co2offset}
-          </div>
-        </div>
-      }
-
-      {props.tab === "technical" &&
+      
+      {props.tab.includes("technical") &&
         <div>
           <div style={{ paddingTop: "2em" }}> {product.displayres} px </div>
           <div style={{ paddingTop: "2em" }}> {product.displayinch} inch </div>

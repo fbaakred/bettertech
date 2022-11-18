@@ -1,0 +1,14 @@
+.subHeader {
+  font-size: xx-large;
+  text-align: center;
+  margin: 60px;
+}
+
+.brandTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandTextContainer>div {
+  margin: 20px;
+}

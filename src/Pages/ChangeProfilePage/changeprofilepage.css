@@ -101,6 +101,7 @@ p {
 
 .f-w-600 {
     font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .m-b-20 {
@@ -133,6 +134,36 @@ p {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
+
+.input-up {
+    width: 200px;
+    height: 20px;
+    border: 0.1px solid lightgrey;
+    border-radius: 3px;
+}
+
+.input-down {
+    width: 200px;
+    height: 20px;
+    border: 0.1px solid lightgrey;
+    border-radius: 3px;
+}
+.input-down:hover {
+    width: 200px;
+    height: 20px;
+    border: 0.1px solid lightgrey;
+    border-radius: 3px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.input-down:hover{
+    width: 200px;
+    height: 20px;
+    border: 0.1px solid lightgrey;
+    border-radius: 3px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
 
 .btn-bottom {
     width: 100px;
