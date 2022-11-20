@@ -21,7 +21,7 @@ const Homepage = () => {
                         </div>
                     </div>
                     <div className={"infoTextBlack"}>
-                        We are here to response to your responsibility towards the planet.
+                        We are here to aid with your responsibility towards the planet.
                         Trust us in guiding you through trusted brands.
                     </div>
                 </div>
