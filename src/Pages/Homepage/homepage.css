@@ -14,13 +14,6 @@
   align-items: center;
 }
 
-.infoTextBlack {
-  font-size: 24px;
-  color: black;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
 .treesAndBalloonsContainer {
   display: flex;
   flex-direction: column;
@@ -29,6 +22,7 @@
 
 .treesContainer {
   display: flex;
+  margin-bottom: -2px;
 }
 
 .greenBackgroundContainer {
@@ -80,14 +74,16 @@
 }
 
 .infoTextBlack {
-  font-size: 24px;
+  font-family: 'Rancho', cursive;
+  font-size: 30px;
   color: black;
   margin-left: 50px;
   margin-right: 50px;
 }
 
 .infoTextWhite {
-  font-size: 24px;
+  font-family: 'Rancho', cursive;
+  font-size: 30px;
   color: white;
 }
 
