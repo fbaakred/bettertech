@@ -51,7 +51,7 @@ const Comparepage = () => {
                         <div className="rowNames">
                             <div style={{ paddingTop: "1.1em", paddingBottom: "0.5em" }}>Average Lifetime</div>
                             <div style={{ paddingTop: "0.3em", paddingBottom: "0.5em" }}>Energy Efficiency (TEC)</div>
-                            <div style={{ paddingTop: "0.6em", paddingBottom: "0.5em" }}>To Put It In A Nutshell:</div>
+                            <div style={{ paddingTop: "0.6em", paddingBottom: "0.5em" }}>To Put It In A Nutshell</div>
                             <div style={{ paddingTop: "2.5em" }} >
                             <Car width="auto" height="40"/>
                             </div>
