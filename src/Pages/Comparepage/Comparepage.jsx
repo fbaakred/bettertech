@@ -5,6 +5,9 @@ import itemsToCompare from "../../Recoil/Atoms/itemsToCompare";
 import { Back } from "iconsax-react";
 import { Link } from "react-router-dom";
 import CompareItem from "./CompareItem";
+import Car from "../../Icons/Car.jsx";
+import Forest from "../../Icons/Forest.jsx";
+import People from "../../Icons/People.jsx";
 import "./comparepage.css";
 
 const Comparepage = () => {
@@ -15,7 +18,7 @@ const Comparepage = () => {
         <div className="comparePage">
             <div className="topOfPage">
                 <Link to="/laptops">
-                    <Back size={40} style={{ paddingLeft: "0.5em", paddingTop: "0.3em" }} />
+                    <Back size={40} style={{ paddingLeft: "0.5em", paddingTop: "0.7em" }} />
                 </Link>
                 <div className="compareHeadline"> Compare Products </div>
             </div>
@@ -49,7 +52,16 @@ const Comparepage = () => {
                             <div style={{ paddingTop: "1.1em", paddingBottom: "0.5em" }}>Average Lifetime</div>
                             <div style={{ paddingTop: "0.3em", paddingBottom: "0.5em" }}>Energy Efficiency (TEC)</div>
                             <div style={{ paddingTop: "0.6em", paddingBottom: "0.5em" }}>To Put It In A Nutshell</div>
-                            <div style={{ paddingTop: "27em"}}>CO2 Breakdown Diagram</div>
+                            <div style={{ paddingTop: "2.5em" }} >
+                            <Car width="auto" height="40"/>
+                            </div>
+                            <div style={{ paddingTop: "4.2em" }}>
+                            <Forest width="auto" height="60"/>
+                            </div>
+                            <div style={{ paddingTop: "4em" }}>
+                            <People width="auto" height="60"/>
+                            </div>
+                            <div style={{ paddingTop: "10em"}}>CO2 Breakdown Diagram</div>
                         </div>
                         {selectedItems.map((obj, key) => (
                             <CompareItem
