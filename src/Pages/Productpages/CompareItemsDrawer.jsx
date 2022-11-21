@@ -15,7 +15,7 @@ const DrawerItem = (props) => {
   const product = props.item;
 
   useEffect(() => {
-    getDownloadURL(ref(storage, product.id + '.jpg')).then((url) => {
+    getDownloadURL(ref(storage, product.id + '.png')).then((url) => {
       setImgUrl(url);
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -27,7 +27,7 @@ const DrawerItem = (props) => {
   }
 
   return (
-    <div className="drawerItem" style={{ borderColor: getBackgroundColor(product.co2score) }}>
+    <div className="drawerItem" style={{ backgroundColor: getBackgroundColor(product.co2score) }}>
       <button className="drawerItemButton" onClick={removeItem}> <Trash /> </button>
       <img src={imgURL} alt="productphoto" height={"100px"} width={"140px"} />
       <div style={{ paddingTop: "0.3em"}}> {product.name} </div>
