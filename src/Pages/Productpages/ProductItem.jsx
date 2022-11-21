@@ -22,7 +22,7 @@ export const ProductItem = (props) => {
     }
 
     useEffect(() => {
-        getDownloadURL(ref(storage, product.id + '.jpg')).then((url) => {
+        getDownloadURL(ref(storage, product.id + '.png')).then((url) => {
             setImgUrl(url);
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
