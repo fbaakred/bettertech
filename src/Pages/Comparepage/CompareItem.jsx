@@ -45,23 +45,23 @@ const CompareItem = (props) => {
           <div style={{ padding: "0.5em" }}> {product.producttype} </div>
           {getCo2ScoreIcon(product.co2score)}
           <div style={{ padding: "0.5em" }}> {product.co2footprint} Kg </div>
-          <div style={{ padding: "0.5em" }}> {product.price1} € </div>
-          <button className={"buyNowButton"} onClick={buyNow}> Buy now </button>
+          <div style={{ padding: "0.5em", paddingBottom: "1.5em"}}> {product.price1} € </div>
+          <button className={"buyNowButton"} onClick={buyNow}> Purchase on Partner Website </button>
         </div>
       }
 
       {props.tab === "psustainability" &&
         <div style={{ marginBottom: "0" }}>
           <div style={{ padding: "0.4em" }}> {product.lifetime} </div>
-          <div style={{ padding: "0.5em" }}> {product.tec} kWh </div>
+          <div style={{ padding: "0.5em", paddingBottom: "3em" }}> {product.tec} kWh </div>
           <div style={{ paddingBottom: "3em" }}>
             <p >This product has a CO2 footprint approx. equivalent to driving</p>
             <h4 style={{ margin: "-0.5em" }}>{product.co2equi1} miles</h4>
-            <p style={{ paddingBottom: "1em" }}>in a passenger car.</p>
+            <p style={{ paddingBottom: "3em" }}>in a passenger car.</p>
 
             <p>10 of these products have a CO2 footprint approx. equal to what</p>
             <h4 style={{ margin: "-0.5em" }}>{product.co2equi2} acres</h4>
-            <p style={{ paddingBottom: "1em" }}>of US forests can absorb in a year.</p>
+            <p style={{ paddingBottom: "3em" }}>of US forests can absorb in a year.</p>
 
             <p>100 of these products have a CO2 footprint about the same as the annual average carbon footprint of</p>
             <h4 style={{ margin: "-0.5em" }}>{product.co2equi3} people.</h4>

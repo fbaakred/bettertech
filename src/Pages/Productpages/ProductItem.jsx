@@ -37,8 +37,7 @@ export const ProductItem = (props) => {
                         <img src={imgURL} alt="productphoto" />
                         <div className="boldProduct"> {product.name} </div>
                         <div className="productText">
-                            {product.name} ({product.displaycm}cm / {product.displayinch}"), {product.cpu},
-                            {product.ssd}GB SSD
+                            {product.name} ({product.displaycm}cm / {product.displayinch}"), {product.cpu}, {product.ram}GB RAM, {product.ssd}GB SSD
                         </div>
                         <div style={{ paddingBottom: "0.5em", fontWeight: "bold" }}> {product.price1} € </div>
                     </div>
