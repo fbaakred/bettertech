@@ -6,6 +6,9 @@ import CompareItem from "../Comparepage/CompareItem";
 import { useEffect } from "react";
 import "../Comparepage/comparepage.css";
 import "./detailedProductPage.css";
+import Car from "../../Icons/Car.jsx";
+import Forest from "../../Icons/Forest.jsx";
+import People from "../../Icons/People.jsx";
 import LightBulb from "../../Components/LightBulb";
 
 const DetailedProductPage = (props) => {
@@ -38,11 +41,20 @@ const DetailedProductPage = (props) => {
       </div>
       <div className="subHeader"> Product Sustainability </div>
       <div className="infoView">
-        <div className="rowNames" style={{paddingTop: "0px"}}>
-          <div style={{ paddingTop: "1.1em", paddingBottom: "0.5em" }}>Average Lifetime</div>
+        <div className="rowNames" style={{paddingTop: "1em"}}>
+          <div style={{ paddingBottom: "0.5em" }}>Average Lifetime</div>
           <div style={{ paddingTop: "0.3em", paddingBottom: "0.5em" }}>Energy Efficiency (TEC)</div>
           <div style={{ paddingTop: "0.6em", paddingBottom: "0.5em" }}>To Put It In A Nutshell</div>
-          <div style={{ paddingTop: "27em"}}>CO2 Breakdown Diagram</div>
+          <div style={{ paddingTop: "2.5em" }} >
+          <Car width="auto" height="40"/>
+          </div>
+          <div style={{ paddingTop: "4.2em" }}>
+          <Forest width="auto" height="60"/>
+          </div>
+          <div style={{ paddingTop: "4em" }}>
+          <People width="auto" height="60"/>
+          </div>
+          <div style={{ paddingTop: "10em"}}>CO2 Breakdown Diagram</div>
         </div>
         <CompareItem product={product} tab="psustainability" hidePhoto={true}/>
       </div>
