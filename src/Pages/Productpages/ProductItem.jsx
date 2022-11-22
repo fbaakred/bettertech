@@ -31,7 +31,7 @@ export const ProductItem = (props) => {
     return (
         <div className="itemContainer">
             <div className="productGridItem" style={{backgroundColor: getBackgroundColor(product.co2score)}}>
-                <Link to={product.name.replace(/ /g, "_")}>
+                <Link to={"/laptops/"+product.name.replace(/ /g, "_")}>
                     <div className="productInfo">
                         <div className="co2ScoreIcon">{getCo2ScoreIcon(product.co2score, "80", "80")}</div>
                         <img src={imgURL} alt="productphoto" />
